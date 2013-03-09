@@ -1,5 +1,5 @@
 ;; some key setting
-;; test abc	haha
+;; test abc	haha hah
 (defun terry-insert-prev-line ()
   "insert a new indent line before current line, just like 'O' in vim"
   (interactive)
