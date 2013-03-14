@@ -1,6 +1,8 @@
 ;; some key setting
 ;; test abc	haha hah nice haha
 ;; this is test_branch, ha~
+;; this is fix_bug branch
+>>>>>>> fix_bug
 (defun terry-insert-prev-line ()
   "insert a new indent line before current line, just like 'O' in vim"
   (interactive)
