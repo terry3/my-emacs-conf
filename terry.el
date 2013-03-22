@@ -38,6 +38,8 @@ or kill current line."
 (global-set-key (kbd "M-i") 'terry-insert-next-line)
 (global-set-key (kbd "M-u") 'terry-insert-prev-line)
 
+
+
 ;; (x-display-pixel-width)
 ;; (x-display-pixel-height)
 
@@ -78,10 +80,15 @@ or kill current line."
 (load-file "~/.emacs.d/terry-lisp/ibus-restart.el")
 
 ;; 标记设置
-(global-set-key (kbd "C-9") 'set-mark-command)
+(global-set-key (kbd "C-4") 'set-mark-command)
+;; 设置 return 换行自动缩近 indent
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-unset-key (kbd "C-@"))
 (global-unset-key (kbd "C-<SPC>"))
+;; 结束
+
+;; 设置 goto-line
+(global-set-key (kbd "<f5>") 'goto-line)
 ;; 结束
 
 ;; 剪切版设置
@@ -280,7 +287,6 @@ or kill current line."
 
 ;; 配置 color-theme
 (add-to-list 'load-path "~/.emacs.d/el-get/color-theme/")
-(load-file "~/.emacs.d/el-get/color-theme-twilight/color-theme-twilight.el")
 
 ;; 开启 color-theme
 (require 'color-theme)
@@ -289,7 +295,7 @@ or kill current line."
 ;;(color-theme-zen-and-art)
 ;;(color-theme-twilight)
 ;;(color-theme-gnome2)
-;;(color-theme-solarized-light)
+;;(color-theme-solarized-dark)
 (color-theme-tangotango)
 ;; 结束
 
