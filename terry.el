@@ -40,11 +40,16 @@ or kill current line."
 
 
 
+;; bracket matching
+(show-paren-mode 1)
+;; end
+
 ;; (x-display-pixel-width)
 ;; (x-display-pixel-height)
 
 
 ;; 图形化界面设置
+;; 当为窗口化系统才启动
 (if window-system
     (progn 
       (defun terry-resize-autoloc-frame (width height)
@@ -55,7 +60,7 @@ or kill current line."
 		  (delete-other-windows)
 		  (set-frame-position frame autox 0)
 		  (set-frame-size frame width height)))
-      (defun terry-resize-frame (width hight x y)
+   (defun terry-resize-frame (width hight x y)
 		"Set the width, height, and x/y position of the current frame"
 		(let ((frame (selected-frame)))
 		  (delete-other-windows)
