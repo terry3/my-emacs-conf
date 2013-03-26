@@ -1,5 +1,4 @@
 ;; some key setting
-;; test abc	haha hah
 (defun terry-insert-prev-line ()
   "insert a new indent line before current line, just like 'O' in vim"
   (interactive)
@@ -93,8 +92,11 @@ or kill current line."
 ;; 结束
 
 ;; 设置 goto-line
-(global-set-key (kbd "<f5>") 'goto-line)
+(global-set-key (kbd "<f11>") 'goto-line)
 ;; 结束
+
+;; 设置 当前窗口最大化
+(global-set-key (kbd "<f1> <f2>") 'delete-other-windows)
 
 ;; 剪切版设置
 (setq x-select-enable-clipboard t)
@@ -294,14 +296,19 @@ or kill current line."
 (add-to-list 'load-path "~/.emacs.d/el-get/color-theme/")
 
 ;; 开启 color-theme
-(require 'color-theme)
-(color-theme-initialize)
 ;;(color-theme-subtle-hacker)
 ;;(color-theme-zen-and-art)
 ;;(color-theme-twilight)
 ;;(color-theme-gnome2)
 ;;(color-theme-solarized-dark)
-(color-theme-tangotango)
+
+;; open it to use color-theme
+;;(require 'color-theme)
+;;(color-theme-initialize)
+;;(color-theme-tangotango)
+
+(require 'birds-of-paradise-plus-theme)
+(load-theme birds-of-paradise-plus t)
 ;; 结束
 
 ;; Interactive Do Things 插件，很给力的插件
@@ -343,14 +350,24 @@ or kill current line."
  )
 ;; 结束
 
+;; pymacs 设置
 
+;; pymacs
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+(autoload 'pymacs-autoload "pymacs")
+
+;; ropemacs
+(pymacs-load "ropemacs" "rope-")
+(setq ropemacs-enable-autoimport t)
+;; pymacs end
 
 
 ;; other .el files add here
 ;; end
-
-
-
 
 ;; '(org-export-html-style-include-default nil)
 
@@ -411,7 +428,7 @@ or kill current line."
              'org-mark-ring)
 ;; 结束
 
-;; jekyll org-mode 到处 html
+;; jekyll org-mode 导出 html
 (setq org-publish-project-alist
       '(
 		("org-ianbarton"
