@@ -1,44 +1,3 @@
-;; some key setting
-(defun terry-insert-prev-line ()
-  "insert a new indent line before current line, just like 'O' in vim"
-  (interactive)
-  (previous-line)
-  (end-of-line)
-  (newline-and-indent))
-
-(defun terry-insert-next-line ()
-  "insert a new indent line after current line, just like 'o' in vim"
-  (interactive)
-  (end-of-line)
-  (newline-and-indent))
-
-(defun terry-copy (&optional arg)
-  "terry-copy, copy line or region:
-when mark-active, copy region;
-or copy current line."
-  (interactive "P")
-  (if mark-active
-      (kill-ring-save (region-beginning) (region-end))
-    (let ((beg (progn (back-to-indentation) (point))) 
-		  (end (line-end-position arg)))
-      (copy-region-as-kill beg end))))
-(defun terry-kill (&optional arg)
-  "terry-kill, kill line or region:
-when mark-active, kill region;
-or kill current line."
-  (interactive "P")
-  (if mark-active
-      (kill-region (region-beginning) (region-end))
-    (kill-whole-line arg)))
-
-(global-set-key (kbd "M-w") 'terry-copy)
-(global-set-key (kbd "C-w") 'terry-kill)
-
-(global-set-key (kbd "M-i") 'terry-insert-next-line)
-(global-set-key (kbd "M-u") 'terry-insert-prev-line)
-
-
-
 ;; bracket matching
 (show-paren-mode 1)
 ;; end
@@ -46,6 +5,8 @@ or kill current line."
 ;; (x-display-pixel-width)
 ;; (x-display-pixel-height)
 
+;; terry-util
+(require 'terry-util)
 
 ;; 图形化界面设置
 ;; 当为窗口化系统才启动
