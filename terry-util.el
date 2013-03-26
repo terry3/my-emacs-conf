@@ -67,13 +67,19 @@ or kill current line."
       (kill-region (region-beginning) (region-end))
     (kill-whole-line arg)))
 
+(defun terry-get-point-string (point)
+  "get point char, then convert it to string"
+  (message (int-to-string point))
+  (char-to-string (char-after point)))
+
+;;(terry-get-point-string 3)
 
 (defun terry-vim-find (char)
   "vim like find. In vim type 'f' then type a char then find the char in thie line."
   (interactive "k")
-;;  (message buffer)
-;;  (message (char-to-string (char-after (point))))
-  (search-forward char)
+  (if (string= (terry-get-point-string (point)) char)
+	  (search-forward char nil t 2)
+	(search-forward char nil t 1))
   (goto-char (1- (point))))
 
 (global-set-key (kbd "M-w") 'terry-copy)
@@ -85,3 +91,6 @@ or kill current line."
 (global-set-key (kbd "C-3") 'terry-vim-find)
 
 ;;; terry-util.el ends here
+
+
+(string= "a" "a")
