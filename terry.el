@@ -308,7 +308,7 @@ or kill current line."
 ;;(color-theme-tangotango)
 
 (require 'birds-of-paradise-plus-theme)
-(load-theme birds-of-paradise-plus t)
+;;(load-theme birds-of-paradise-plus t)
 ;; 结束
 
 ;; Interactive Do Things 插件，很给力的插件
