@@ -303,7 +303,7 @@ or kill current line."
 ;;(color-theme-solarized-dark)
 
 ;; open it to use color-theme
-;;(require 'color-theme)
+(require 'color-theme)
 ;;(color-theme-initialize)
 ;;(color-theme-tangotango)
 
