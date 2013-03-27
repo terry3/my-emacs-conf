@@ -52,8 +52,10 @@
   "terry-copy, copy line or region:
 when mark-active, copy region;
 or copy current line."
-  		  (end (line-end-position arg)))
-      (copy-region-as-kill beg end))))
+  (kill-ring-save (region-beginning) (region-end))
+  (let ((beg (progn (back-to-indentation) (point))) 
+	(end (line-end-position arg))
+    (copy-region-as-kill beg end))))
 (defun terry-kill (&optional arg)
   "terry-kill, kill line or region:
 when mark-active, kill region;
@@ -74,8 +76,8 @@ or kill current line."
   "vim like find. In vim type 'f' then type a char then find the char in thie line."
   (interactive "k")
   (if (string= (terry-get-point-string (point)) char)
-	  (search-forward char nil t 2)
-	(search-forward char nil t 1))
+      (search-forward char nil t 2)
+    (search-forward char nil t 1))
   (goto-char (1- (point))))
 
 (global-set-key (kbd "M-w") 'terry-copy)
