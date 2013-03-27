@@ -52,10 +52,12 @@
   "terry-copy, copy line or region:
 when mark-active, copy region;
 or copy current line."
-  (kill-ring-save (region-beginning) (region-end))
-  (let ((beg (progn (back-to-indentation) (point))) 
-	(end (line-end-position arg))
-    (copy-region-as-kill beg end))))
+  (interactive "P")
+  (if mark-active
+	  (kill-ring-save (region-beginning) (region-end))
+	(let ((beg (progn (back-to-indentation) (point))) 
+		  (end (line-end-position arg)))
+		  (copy-region-as-kill beg end))))
 (defun terry-kill (&optional arg)
   "terry-kill, kill line or region:
 when mark-active, kill region;
