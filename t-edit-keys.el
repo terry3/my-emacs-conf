@@ -84,9 +84,4 @@
 (global-set-key (kbd "M-i") 'terry-insert-next-line)
 (global-set-key (kbd "M-u") 'terry-insert-prev-line)
 
-;; matching parens
-(require 'smartparens-config)
-(smartparens-global-mode t)
-(show-paren-mode t)
-
 (provide 't-edit-keys)

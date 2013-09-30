@@ -1,7 +1,6 @@
 ;; config ido
 (require 'ido-ubiquitous)
 (require 'smex)
-(require 'idomenu)
 
 (ido-mode t)
 (ido-everywhere t)

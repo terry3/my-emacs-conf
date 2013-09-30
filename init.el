@@ -14,10 +14,10 @@
 (require 't-yasnippet)
 (require 't-ac)
 (require 't-util)
-(require 't-session)
 
-(if window-system
-	(set-frame-size (selected-frame) 80 30))
+(require 't-session)
+(require 't-looks)
+
 
 (provide 't-init)
 

@@ -16,12 +16,12 @@
 ;; delete scroll bar
 (menu-bar-no-scroll-bar)
 ;; ½áÊø
+;(require 'birds-of-paradise-plus-theme)
+;; (load-theme birds-of-paradise-plus t)
 
 ;; set emacs font, encod
-(set-frame-font "Source Code Pro 11")
+(set-frame-font "Ubuntu mono 14")
 (set-fontset-font "fontset-default" 'han '("ÎÄÈªæäÎ¢Ã×ºÚ"))
 (color-theme-almost-monokai)
-
-
 
 (provide 't-theme)
