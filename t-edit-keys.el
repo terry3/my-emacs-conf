@@ -71,9 +71,10 @@
 (defun terry-insert-prev-line ()
   "insert a new indent line before current line, just like 'O' in vim"
   (interactive)
+  (beginning-of-line)
+  (newline-and-indent)
   (previous-line)
-  (end-of-line)
-  (newline-and-indent))
+)
 ;; insert line after cur-line
 (defun terry-insert-next-line ()
   "insert a new indent line after current line, just like 'o' in vim"
