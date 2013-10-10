@@ -1,4 +1,4 @@
 ;; set jump last position
-(global-set-key (kbd "C-1") 'pop-global-mark)
+(global-set-key (kbd "M-`") 'pop-global-mark)
 
 (provide 't-keys)

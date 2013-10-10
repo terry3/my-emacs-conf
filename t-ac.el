@@ -12,7 +12,9 @@
 ;;----------------------------------------------------------------------------
 (setq tab-always-indent 'complete)  ;; use 't when auto-complete is disabled
 (add-to-list 'completion-styles 'initials t)
-
+(setq ac-auto-start t)
+(setq ac-delay 0.1)
+(setq ac-quick-help-delay 0.1)
 ;; hook AC into completion-at-point
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))
