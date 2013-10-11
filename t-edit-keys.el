@@ -39,6 +39,8 @@
 ;; goto line key
 (global-set-key (kbd "C-'") 'goto-line)
 
+;; require smartparens
+
 ;; 删除整行，不留下换行符
 (setq kill-whole-line t)
 

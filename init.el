@@ -18,6 +18,8 @@
 (require 't-session)
 (require 't-looks)
 
+(require 't-c-lang)
+
 
 (provide 't-init)
 
