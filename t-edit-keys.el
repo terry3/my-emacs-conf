@@ -1,8 +1,23 @@
 ;; change buffer
-(global-set-key (kbd "<f9>") 'previous-buffer)
-(global-set-key (kbd "<f10>") 'next-buffer)
+(global-set-key (kbd "<f9>") 'back-button-global-backward)
+(global-set-key (kbd "<f10>") 'back-button-global-forward)
 
+(global-set-key (kbd "C-8") 'previous-buffer)
+(global-set-key (kbd "C-7") 'next-buffer)
+;; back-button控制windows的跳转
+(require 'back-button)
+(back-button-mode 1)
+
+
+;; 对当前行进行操作
 (require 'whole-line-or-region)
+;;'M-w' copies the current line when the region is not active
+;;'C-w' deletes it.
+(whole-line-or-region-mode t)
+;; 删除整行，不留下换行符
+(setq kill-whole-line t)
+;; 删除整行，留下换行符
+;; (setq kill-whole-line nil)
 
 ;; Some basic preferences
 (setq-default
@@ -19,54 +34,53 @@
  grep-scroll-output t
  indent-tabs-mode nil
  line-spacing 0.2
- make-backup-files nil
+; make-backup-files nil                    ;不开启备份
  mouse-yank-at-point t
  set-mark-command-repeat-pop t
  show-trailing-whitespace t
  tooltip-delay 1.5
  truncate-lines nil
  truncate-partial-width-windows nil
- visible-bell t)
+ visible-bell t
+; scroll-margin 5                       ;屏幕边缘5行滚动
+)
+
 
 ;; auto revert
-(global-auto-revert-mode)
-(setq global-auto-revert-non-file-buffers t
-      auto-revert-verbose nil)
+;;(global-auto-revert-mode)
+;;(setq global-auto-revert-non-file-buffers t
+;;      auto-revert-verbose nil)
 
 ;; what's this?
 (transient-mark-mode t)
 
 ;; goto line key
-(global-set-key (kbd "C-'") 'goto-line)
+;; (global-set-key (kbd "C-'") 'goto-line)
 
 ;; require smartparens
+(smartparens-global-mode t)
+(require 'smartparens-config)
+(show-smartparens-global-mode t)
 
-;; 删除整行，不留下换行符
-(setq kill-whole-line t)
-
+;; auto expand-region "auto-expand"
 (require 'expand-region)
-(global-set-key (kbd "C-4") 'er/expand-region)
-
+(global-set-key (kbd "C-0") 'er/expand-region)
 
 ;; Rectangle selections, and overwrite text when the selection is active
 (cua-selection-mode t)                  ; for rectangles, CUA is nice
 
 ;; set mark
-(global-set-key (kbd "C-.") 'set-mark-command)
+;; (define-key global-map (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "C-j") 'cua-set-mark)
+;; (global-set-key (kbd "C-.") 'set-mark-command)
 (global-set-key (kbd "C-x C-.") 'pop-global-mark)
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
 
 ;; ace jump
 (require 'ace-jump-mode)
-(global-set-key (kbd "C-;") 'ace-jump-mode)
-(global-set-key (kbd "C-:") 'ace-jump-word-mode)
+(global-set-key (kbd "C-,") 'ace-jump-mode)
 
-;;'M-w' copies the current line when the region is not active
-;;'C-w' deletes it.
-(whole-line-or-region-mode t)
-
-;; maximize current windows
+;; maximize current window
 (global-set-key (kbd "<f1><f2>") 'delete-other-windows)
 
 ;; insert line before cur-line
@@ -74,8 +88,9 @@
   "insert a new indent line before current line, just like 'O' in vim"
   (interactive)
   (beginning-of-line)
-  (newline-and-indent)
+  (newline)
   (previous-line)
+  (indent-for-tab-command)
 )
 ;; insert line after cur-line
 (defun terry-insert-next-line ()
@@ -84,7 +99,50 @@
   (end-of-line)
   (newline-and-indent))
 
+(defun terry-toggle-comment-current-line()
+  "comment the current line"
+  (interactive)
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+
 (global-set-key (kbd "M-i") 'terry-insert-next-line)
 (global-set-key (kbd "M-u") 'terry-insert-prev-line)
+
+;; switch to other window
+(global-set-key (kbd "<f11>") 'other-window)
+;; find global file
+(global-set-key (kbd "M-4") 'cscope-find-this-file)
+;; find global reference
+(global-set-key (kbd "M-3") 'cscope-find-called-functions)
+;; find global definition
+(global-set-key (kbd "M-2") 'cscope-find-global-definition)
+;; return to prev position
+(global-set-key (kbd "M-1") 'cscope-pop-mark)
+;; display file path & and
+(global-set-key (kbd "<f12>") (lambda() (interactive) (message (buffer-file-name))))
+
+;; comment current line
+(global-set-key (kbd "M-l") 'terry-toggle-comment-current-line)
+
+;; undo-tree
+(global-undo-tree-mode)
+
+
+;; set refresh keys, reload current buffer
+(defun refresh-file ()
+  (interactive)
+  (revert-buffer t (not (buffer-modified-p)) t))
+
+(global-set-key (kbd "<f5>") 'refresh-file)
+
+
+;; 重载所有打开文件的buffer
+(defun revert-all-buffers ()
+    "Refreshes all open buffers from their respective files."
+    (interactive)
+    (dolist (buf (buffer-list))
+      (with-current-buffer buf
+        (when (and (buffer-file-name) (file-exists-p (buffer-file-name)) (not (buffer-modified-p)))
+          (revert-buffer t t t) )))
+    (message "Refreshed open files.") )
 
 (provide 't-edit-keys)

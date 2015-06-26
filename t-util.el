@@ -14,8 +14,35 @@
 ;; Allow the same buffer to be open in different frames
 (setq ido-default-buffer-method 'selected-window)
 
-;; set default coding
-(setq default-buffer-file-coding-system 'utf-8)
+;; set default buffer file system coding
+(set-default buffer-file-coding-system 'utf-8-unix)
+(set-default-coding-systems 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
+(set-default default-buffer-file-coding-system 'utf-8-unix)
 
+;; highlight sytax
+;;(global-font-lock-mode t)
+
+;; print the nice word
+(defun terry-print-word ()
+  "print the nice word"
+  (interactive)
+  (message (shell-command-to-string "random-time.pl")))
+
+;; only in the terry's xubuntu
+;; (global-set-key (kbd "<f8>") 'terry-print-word)
+
+;; youdao dict
+(defun terry-dict-youdao ()
+  "query youdao dict from youdao api"
+  (interactive)
+  ;; read the input word
+  (let (input-word shell-string)
+    (setq input-word (read-from-minibuffer "Enter word: "))
+    (setq shell-string (concat "youdao-perl.pl  " input-word))
+    (message (shell-command-to-string shell-string)))
+    )
+;; only in the terry's xubuntu
+;; (global-set-key (kbd "M-9") 'terry-dict-youdao)
 
 (provide 't-util)
