@@ -1,6 +1,6 @@
 ;; (color-theme-molokai)
 ;; (color-theme-deep-blue)
-;; (color-theme-solarized-dark)
+(color-theme-solarized-light)
 ;; tmp color theme, my eyes were weeping.
 ;; (color-theme-blue-mood)
 ;; (color-theme-gnome2)

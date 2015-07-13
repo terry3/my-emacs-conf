@@ -30,6 +30,10 @@
 (require 't-perl)
 ;; evil
 (require 't-evil)
+;; git&git front end config
+(require 't-git)
+
+
 
 (provide 't-init)
 (custom-set-variables

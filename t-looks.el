@@ -22,10 +22,12 @@
 ;; set emacs font, encod
 ;;(set-frame-font "Ubuntu mono 14")
 ;;(set-fontset-font "fontset-default" 'han '("微软雅黑"))
-(set-default-font "Ubuntu Mono 15")
+;; (set-default-font "Ubuntu Mono 15")
+(set-default-font "Consolas 14")
 
 ;; powerline
-(require 'powerline)
+;; not good
+;; (require 'powerline)
 
 ;; Begin: set emacs full screen 2013-09-29
 (defun toggle-fullscreen ()
