@@ -79,5 +79,15 @@
   (setq buffer-display-table (make-display-table))
   (aset buffer-display-table ?\^M []))
 
+(defun hide-ctrl-M ()
+  "Hides the disturbing '^M' showing up in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+;; set emacs split windows horizontally  default
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
 (provide 't-looks)
 

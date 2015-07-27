@@ -109,14 +109,6 @@
 
 ;; switch to other window
 (global-set-key (kbd "<f11>") 'other-window)
-;; find global file
-(global-set-key (kbd "M-4") 'cscope-find-this-file)
-;; find global reference
-(global-set-key (kbd "M-3") 'cscope-find-called-functions)
-;; find global definition
-(global-set-key (kbd "M-2") 'cscope-find-global-definition)
-;; return to prev position
-(global-set-key (kbd "M-1") 'cscope-pop-mark)
 ;; display file path & and
 (global-set-key (kbd "<f12>") (lambda() (interactive) (message (buffer-file-name))))
 

@@ -26,7 +26,7 @@
 (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
 
 ;; gtags config
-;;(add-to-list 'load-path (expand-file-name "C:/terry3/soft/gnu-glob/share/gtags/"))
+;; (add-to-list 'load-path (expand-file-name "C:/terry3/soft/gnu-glob/share/gtags/"))
 
 ;;(require 'gtags)
 ;;(require 'xgtags)
@@ -39,6 +39,13 @@
 ;; set <F5> to the leader of C-c w
 ;;(require 'xgtags-extension)
 
-
+;; find global file
+(global-set-key (kbd "M-4") 'cscope-find-this-file)
+;; find global reference
+(global-set-key (kbd "M-3") 'cscope-symbol)
+;; find global definition
+(global-set-key (kbd "M-2") 'cscope-find-global-definition)
+;; return to prev position
+(global-set-key (kbd "M-1") 'cscope-pop-mark)
 
 (provide 't-lang-c)
