@@ -4,6 +4,8 @@
 (require 't-backup)
 ;; not work?
 (require 't-ac)
+;; util edit keys
+(require 't-edit-keys)
 ;; yas
 (require 't-yasnippet)
 ;; lang-c
@@ -30,10 +32,6 @@
 (require 't-evil)
 ;; git&git front end config
 (require 't-git)
-;; highlight
-(require 't-hl)
-;; util edit keys
-(require 't-edit-keys)
 
 (provide 't-init)
 (custom-set-variables
