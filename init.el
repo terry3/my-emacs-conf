@@ -32,7 +32,8 @@
 (require 't-evil)
 ;; git&git front end config
 (require 't-git)
-
+;; highlight mode
+(require 't-hl)
 (provide 't-init)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
