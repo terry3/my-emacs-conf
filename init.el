@@ -34,6 +34,8 @@
 (require 't-git)
 ;; highlight mode
 (require 't-hl)
+;; enable helm
+(require 't-helm)
 (provide 't-init)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
