@@ -1,7 +1,10 @@
 ;; (color-theme-molokai)
 ;; (color-theme-deep-blue)
-(color-theme-solarized-light)
+;; (color-theme-solarized-light)
 ;; tmp color theme, my eyes were weeping.
 ;; (color-theme-gnome2)
-;; (color-theme-monokai)
+;; (color-theme-almost-monokai)
+;; (color-theme-tango-2)
+;; (color-theme-tango)
+(color-theme-tangotango)
 (provide 't-theme)

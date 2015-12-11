@@ -1,6 +1,6 @@
 ;; config ido
-(require 'ido-ubiquitous)
-(require 'smex)
+;; (require 'ido-ubiquitous)
+;; (require 'smex)
 
 ;; (ido-mode t)
 ;; (ido-everywhere t)
@@ -9,10 +9,10 @@
 ;; (setq ido-use-filename-at-point nil)
 ;; (setq ido-auto-merge-work-directories-length 0)
 ;; (setq ido-use-virtual-buffers t)
-;; find function
+;; ;; find function
 ;; (global-set-key (kbd "M-x") 'smex)
-;; Allow the same buffer to be open in different frames
-(setq ido-default-buffer-method 'selected-window)
+;; ;; Allow the same buffer to be open in different frames
+;; (setq ido-default-buffer-method 'selected-window)
 
 ;; set default buffer file system coding
 (set-default buffer-file-coding-system 'utf-8-unix)
@@ -23,6 +23,7 @@
 ;; highlight sytax
 ;;(global-font-lock-mode t)
 
+;; set dired-detail always detail
 ;; print the nice word
 (defun terry-print-word ()
   "print the nice word"

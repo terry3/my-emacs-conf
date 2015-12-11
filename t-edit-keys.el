@@ -8,16 +8,12 @@
 (require 'back-button)
 (back-button-mode 1)
 
-
-;; 对当前行进行操作
 (require 'whole-line-or-region)
 ;;'M-w' copies the current line when the region is not active
 ;;'C-w' deletes it.
 (whole-line-or-region-mode t)
-;; 删除整行，不留下换行符
+;; kill line contain the 'return'
 (setq kill-whole-line t)
-;; 删除整行，留下换行符
-;; (setq kill-whole-line nil)
 
 ;; Some basic preferences
 (setq-default
@@ -41,9 +37,13 @@
  tooltip-delay 1.5
  truncate-lines nil
  truncate-partial-width-windows nil
- visible-bell t
 ; scroll-margin 5                       ;屏幕边缘5行滚动
-)
+ )
+
+
+;; workaround the visible-bell in OSX Ei
+(setq visible-bell nil) ;; The default
+(setq ring-bell-function 'ignore)
 
 
 ;; auto revert
@@ -120,8 +120,7 @@
 (global-set-key (kbd "M-l") 'terry-toggle-comment-current-line)
 
 ;; undo-tree
-(global-undo-tree-mode)
-
+;;(global-undo-tree-mode)
 
 ;; set refresh keys, reload current buffer
 (defun refresh-file ()

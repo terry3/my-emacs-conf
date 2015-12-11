@@ -15,16 +15,20 @@
 ;; delete scroll bar
 (menu-bar-no-scroll-bar)
 
-;; 设置光标为竖线
+;; set cursor type to bar
 (setq-default cursor-type 'bar)
-;; 设置光标为方块
+;; set cursor type to box
 ;;(setq-default cursor-type 'box)
 
 ;; set emacs font, encod
 ;;(set-frame-font "Ubuntu mono 14")
 ;;(set-fontset-font "fontset-default" 'han '("微软雅黑"))
-(set-default-font "Ubuntu Mono 15")
-;; (set-default-font "Consolas 14")
+;; (set-default-font "Ubuntu Mono 15")
+(set-default-font "Monaco 15")
+(add-to-list 'default-frame-alist '(font . "Monaco 15"))
+(add-to-list 'default-frame-alist '(width  . 150))
+(add-to-list 'default-frame-alist '(height . 40))
+(add-to-list 'default-frame-alist '(left . 40))
 
 ;; powerline
 ;; not good
@@ -43,7 +47,7 @@
 ;; End: set emacs full screen
 
 ;; (setq default-frame-alist
-;; '((height . 33)
+;; '((height . 43)
 ;;   (width . 80)
 ;;   ;;(menu-bar-lines . 20)
 ;;   ;;(tool-bar-lines . 0)
@@ -54,8 +58,14 @@
 ;; set emacs window size
 (if (eq system-type 'windows-nt)
     (progn (set-frame-width (selected-frame) 80)
-     (set-frame-height (selected-frame) 32)
-     (set-frame-position (selected-frame) 300 3)))
+     (set-frame-height (selected-frame) 33)
+     (set-frame-position (selected-frame) 330 2)))
+
+;; set emacs window size in osx
+(if (string-equal system-type "darwin")
+    (progn (set-frame-width (selected-frame) 120)
+     (set-frame-height (selected-frame) 42)
+     (set-frame-position (selected-frame) 150 39)))
 
 ;; set emacs fullscreen
 ;; (if (eq system-type 'windows-nt)
@@ -115,6 +125,18 @@
         (pop-up-windows nil))
     (display-buffer buf not-this-window)))
 
-(setq display-buffer-function 'my-display-buffer-function)
+;; (setq display-buffer-function 'my-display-buffer-function)
 
+;; reuse one window
+;; all buffers, try to reuse windows across all frames
+;; (add-to-list 'display-buffer-alist
+;;            '(".*". (display-buffer-reuse-window .
+;;                                   ((reusable-frames . t)))))
+
+;; except for compilation buffers where you want new and dedicated frames when necessary
+;; (add-to-list 'display-buffer-alist
+;;          '("^\\*Compile-Log\\*". ((display-buffer-reuse-window
+;;                                    display-buffer-pop-up-frame) .
+;;                                   ((reusable-frames . t)
+;;                                   (inhibit-same-window . t)))))
 (provide 't-looks)

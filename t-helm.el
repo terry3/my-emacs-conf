@@ -14,13 +14,15 @@
 (global-set-key (kbd "M-x")                          'undefined)
 (global-set-key (kbd "M-x")                          'helm-M-x)
 (global-set-key (kbd "M-y")                          'helm-show-kill-ring)
-(global-set-key (kbd "C-c f")                        'helm-recentf)
+(global-set-key (kbd "C-c f")                        'helm-recentf) ;recent file
 (global-set-key (kbd "C-x C-f")                      'helm-find-files)
 (global-set-key (kbd "C-c <SPC>")                    'helm-all-mark-rings)
 (global-set-key (kbd "C-x r b")                      'helm-filtered-bookmarks)
 (global-set-key (kbd "C-h r")                        'helm-info-emacs)
 (global-set-key (kbd "C-h i")                        'helm-info-at-point)
 (global-set-key (kbd "C-x C-d")                      'helm-browse-project)
+(global-set-key (kbd "C-x C-b")                      'helm-buffers-list)
+(global-set-key (kbd "C-x b")                        'helm-mini)
 (global-set-key (kbd "C-h C-f")                      'helm-apropos)
 ;;(global-set-key (kbd "<f5> s")                       'helm-find)
 (global-set-key (kbd "C-c g")                        'helm-gid)
@@ -33,15 +35,13 @@
 (define-key shell-mode-map (kbd "M-p")               'helm-comint-input-ring) ; shell history.
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+(define-key helm-map (kbd "C-i")   'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")   'helm-select-action) ; list actions using C-z
 
 ;;; Helm-variables
-;;
-;;
 (setq helm-google-suggest-use-curl-p             t
-      ;helm-kill-ring-threshold                   1
       helm-raise-command                         "wmctrl -xa %s"
+      ;helm-kill-ring-threshold                   1
       helm-scroll-amount                         4
       ;helm-quick-update                          t
       helm-idle-delay                            0.01
@@ -54,15 +54,15 @@
       helm-pdfgrep-default-read-command          "evince --page-label=%p '%f'"
       ;helm-ff-transformer-show-only-basename     t
       helm-ff-auto-update-initial-value          t
-      helm-grep-default-command                  "ack-grep -Hn --smart-case --no-group %e %p %f"
-      helm-grep-default-recurse-command          "ack-grep -H --smart-case --no-group %e %p %f"
+      helm-grep-default-command                  "ggrep --color=always -d skip %e -n%cH -e %p %f"
+      helm-grep-default-recurse-command          "ggrep --color=always -d recurse %e -n%cH -e %p %f"
       ;; Allow skipping unwanted files specified in ~/.gitignore_global
       ;; Added in my .gitconfig with "git config --global core.excludesfile ~/.gitignore_global"
       helm-ls-git-grep-command                   "git grep -n%cH --color=always --exclude-standard --no-index --full-name -e %p %f"
       helm-default-zgrep-command                 "zgrep --color=always -a -n%cH -e %p %f"
       ;helm-pdfgrep-default-command               "pdfgrep --color always -niH %s %s"
       helm-reuse-last-window-split-state         t
-      ;helm-split-window-default-side             'below
+      helm-split-window-default-side             'below
       ;helm-split-window-in-side-p                t
       ;helm-echo-input-in-header-line             t
       helm-always-two-windows                    t
@@ -78,7 +78,7 @@
       ;helm-surfraw-default-browser-function      'w3m-browse-url
       helm-boring-file-regexp-list               '("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.i$")
       ;helm-mode-handle-completion-in-region      t
-      ;helm-moccur-always-search-in-current        t
+      helm-moccur-always-search-in-current        t
       ;helm-tramp-verbose                         6
       helm-buffer-skip-remote-checking            t
       ;helm-ff-file-name-history-use-recentf      t
@@ -86,6 +86,7 @@
       helm-apropos-fuzzy-match                    t
       helm-M-x-fuzzy-match                        t
       helm-lisp-fuzzy-completion                  t
+      helm-recentf-fuzzy-match                    t
       ;helm-locate-fuzzy-match                     t
       helm-completion-in-region-fuzzy-match       t
       helm-move-to-line-cycle-in-source           t
@@ -105,9 +106,12 @@
       fit-window-to-buffer-horizontally           1
       helm-open-github-closed-issue-since         7
       helm-search-suggest-action-wikipedia-url
-      "https://fr.wikipedia.org/wiki/Special:Search?search=%s"
+      "https://en.wikipedia.org/wiki/Special:Search?search=%s"
       helm-wikipedia-suggest-url
-      "http://fr.wikipedia.org/w/api.php?action=opensearch&search="
+      "http://en.wikipedia.org/w/api.php?action=opensearch&search="
       helm-wikipedia-summary-url
-      "http://fr.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=")
+      "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=")
+
+;; set helm-ls-git
+(require 'helm-ls-git)
 (provide 't-helm)

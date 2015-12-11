@@ -1,11 +1,9 @@
-;; 自动备份文件 至 ~/.emacs_backup 目录
-(setq backup-by-copying t ; 自动备份
+;; set backup directory
+(setq backup-by-copying t
       backup-directory-alist
-      '(("." . "/home/terry3/.emacs_backup")) ;自动备份在目录"~/.emacs_backup"下
-      delete-old-versions t ; 自动删除旧的备份文件
-      kept-new-versions 6 ; 保留最近的1个备份文件
-      kept-old-versions 2 ; 保留最早的2个备份文件
-      version-control t) ; 多次备份
-;; 结束
-
+      '(("." . "/Users/tengfeiguo/.emacs_backup")) ; Remember to modify this when change os.
+      delete-old-versions t ; delete old version auto
+      kept-new-versions 6 ; keep 6 backup
+      kept-old-versions 2
+      version-control t)
 (provide 't-backup)
