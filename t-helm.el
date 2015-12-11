@@ -51,7 +51,7 @@
       helm-ff-search-library-in-sexp             t
       ;helm-kill-ring-max-lines-number            5
       helm-default-external-file-browser         "thunar"
-      helm-pdfgrep-default-read-command          "evince --page-label=%p '%f'"
+      ;helm-pdfgrep-default-read-command          "evince --page-label=%p '%f'"
       ;helm-ff-transformer-show-only-basename     t
       helm-ff-auto-update-initial-value          t
       helm-grep-default-command                  "ggrep --color=always -d skip %e -n%cH -e %p %f"
@@ -74,7 +74,7 @@
       ;helm-candidate-number-limit                200
       helm-M-x-requires-pattern                  0
       helm-dabbrev-cycle-threshold                5
-      helm-surfraw-duckduckgo-url                "https://duckduckgo.com/?q=%s&ke=-1&kf=fw&kl=fr-fr&kr=b&k1=-1&k4=-1"
+      ;helm-surfraw-duckduckgo-url                "https://duckduckgo.com/?q=%s&ke=-1&kf=fw&kl=fr-fr&kr=b&k1=-1&k4=-1"
       ;helm-surfraw-default-browser-function      'w3m-browse-url
       helm-boring-file-regexp-list               '("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.i$")
       ;helm-mode-handle-completion-in-region      t
