@@ -26,8 +26,8 @@
 ;; (set-default-font "Ubuntu Mono 15")
 (set-default-font "Monaco 15")
 (add-to-list 'default-frame-alist '(font . "Monaco 15"))
-(add-to-list 'default-frame-alist '(width  . 150))
-(add-to-list 'default-frame-alist '(height . 40))
+(add-to-list 'default-frame-alist '(width  . 130))
+(add-to-list 'default-frame-alist '(height . 36))
 (add-to-list 'default-frame-alist '(left . 40))
 
 ;; powerline
@@ -63,9 +63,9 @@
 
 ;; set emacs window size in osx
 (if (string-equal system-type "darwin")
-    (progn (set-frame-width (selected-frame) 120)
-     (set-frame-height (selected-frame) 42)
-     (set-frame-position (selected-frame) 150 39)))
+    (progn (set-frame-width (selected-frame) 100)
+     (set-frame-height (selected-frame) 36)
+     (set-frame-position (selected-frame) 130 39)))
 
 ;; set emacs fullscreen
 ;; (if (eq system-type 'windows-nt)
