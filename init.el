@@ -36,4 +36,6 @@
 (require 't-hl)
 ;; enable helm
 (require 't-helm)
+;; web misc
+(require 't-web)
 (provide 't-init)
