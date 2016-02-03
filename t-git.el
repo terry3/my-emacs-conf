@@ -5,7 +5,4 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
-;; git-gutter
-(global-git-gutter-mode +1)
-
 (provide 't-git)
