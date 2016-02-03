@@ -43,7 +43,7 @@
       helm-raise-command                         "wmctrl -xa %s"
       ;helm-kill-ring-threshold                   1
       helm-scroll-amount                         4
-      ;helm-quick-update                          t
+      helm-quick-update                          t
       helm-idle-delay                            0.01
       helm-input-idle-delay                      0.01
       ;helm-completion-window-scroll-margin       0
