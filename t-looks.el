@@ -25,10 +25,10 @@
 ;;(set-fontset-font "fontset-default" 'han '("微软雅黑"))
 ;; (set-default-font "Ubuntu Mono 15")
 (set-default-font "Monaco 15")
-(add-to-list 'default-frame-alist '(font . "Monaco 15"))
-(add-to-list 'default-frame-alist '(width  . 100))
-(add-to-list 'default-frame-alist '(height . 40))
-(add-to-list 'default-frame-alist '(left . 40))
+;(add-to-list 'default-frame-alist '(font . "Monaco 15"))
+;; (add-to-list 'default-frame-alist '(width  . 100))
+;; (add-to-list 'default-frame-alist '(height . 39))
+;; (add-to-list 'default-frame-alist '(left . 40))
 
 ;; powerline
 ;; not good
@@ -62,10 +62,10 @@
      (set-frame-position (selected-frame) 330 2)))
 
 ;; set emacs window size in osx
-(if (string-equal system-type "darwin")
-    (progn (set-frame-width (selected-frame) 80)
-     (set-frame-height (selected-frame) 39)
-     (set-frame-position (selected-frame) 350 0)))
+;; (if (string-equal system-type "darwin")
+;;     (progn (set-frame-width (selected-frame) 80)
+;;      (set-frame-height (selected-frame) 39)
+;;      (set-frame-position (selected-frame) 350 0)))
 
 ;; set emacs fullscreen
 ;; (if (eq system-type 'windows-nt)
