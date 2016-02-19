@@ -139,4 +139,7 @@
 ;;                                    display-buffer-pop-up-frame) .
 ;;                                   ((reusable-frames . t)
 ;;                                   (inhibit-same-window . t)))))
+
+;; smart-mode-line
+(sml/setup)
 (provide 't-looks)
