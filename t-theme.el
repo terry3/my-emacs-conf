@@ -16,6 +16,8 @@
 ;; (enable-theme 'ample)
 ;; (enable-theme 'ample-flat)
 ;; (enable-theme 'ample-light)
-(require 'color-theme-sanityinc-tomorrow)
+;; (require 'color-theme-sanityinc-tomorrow)
+
+(load-theme 'zenburn t)
 
 (provide 't-theme)

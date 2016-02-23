@@ -24,7 +24,7 @@
 ;;(set-frame-font "Ubuntu mono 14")
 ;;(set-fontset-font "fontset-default" 'han '("微软雅黑"))
 ;; (set-default-font "Ubuntu Mono 15")
-(set-default-font "Monaco 15")
+(set-default-font "Monaco 17")
 ;(add-to-list 'default-frame-alist '(font . "Monaco 15"))
 ;; (add-to-list 'default-frame-alist '(width  . 100))
 ;; (add-to-list 'default-frame-alist '(height . 39))
@@ -142,4 +142,7 @@
 
 ;; smart-mode-line
 (sml/setup)
+
+;; 80 col
+(require 'fill-column-indicator)
 (provide 't-looks)
