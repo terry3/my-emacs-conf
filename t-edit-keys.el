@@ -1,10 +1,10 @@
 ;; change buffer
-(global-set-key (kbd "<f9>") 'back-button-global-backward)
-(global-set-key (kbd "<f10>") 'back-button-global-forward)
+;; (global-set-key (kbd "<f9>") 'back-button-global-backward)
+;; (global-set-key (kbd "<f10>") 'back-button-global-forward)
 
-(global-set-key (kbd "C-8") 'previous-buffer)
-(global-set-key (kbd "C-7") 'next-buffer)
-;; back-button控制windows的跳转
+;; (global-set-key (kbd "C-8") 'previous-buffer)
+;; (global-set-key (kbd "C-7") 'next-buffer)
+;; back-button control the navigation in windows
 (require 'back-button)
 (back-button-mode 1)
 
@@ -30,32 +30,22 @@
  grep-scroll-output t
  indent-tabs-mode nil
  line-spacing 0.2
-; make-backup-files nil                    ;不开启备份
+; make-backup-files nil                    ; off backup
  mouse-yank-at-point t
  set-mark-command-repeat-pop t
  show-trailing-whitespace t
  tooltip-delay 1.5
  truncate-lines nil
  truncate-partial-width-windows nil
-; scroll-margin 5                       ;屏幕边缘5行滚动
+; scroll-margin 5                       ; scroll when margin 5 lines
  )
-
 
 ;; workaround the visible-bell in OSX Ei
 (setq visible-bell nil) ;; The default
 (setq ring-bell-function 'ignore)
 
-
-;; auto revert
-;;(global-auto-revert-mode)
-;;(setq global-auto-revert-non-file-buffers t
-;;      auto-revert-verbose nil)
-
 ;; what's this?
 (transient-mark-mode t)
-
-;; goto line key
-;; (global-set-key (kbd "C-'") 'goto-line)
 
 ;; require smartparens
 (smartparens-global-mode t)
@@ -70,7 +60,6 @@
 (cua-selection-mode t)                  ; for rectangles, CUA is nice
 
 ;; set mark
-;; (define-key global-map (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-j") 'cua-set-mark)
 ;; (global-set-key (kbd "C-.") 'set-mark-command)
@@ -83,9 +72,6 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (local-set-key (kbd "C-,") 'ace-jump-mode)))
-
-;; maximize current window
-(global-set-key (kbd "<f1><f2>") 'delete-other-windows)
 
 ;; insert line before cur-line
 (defun terry-insert-prev-line ()
@@ -131,8 +117,7 @@
 ;; set key to cycle the windows
 (global-set-key (kbd "M-`") 'other-window)
 
-
-;; 重载所有打开文件的buffer
+;; revert all buffers
 (defun revert-all-buffers ()
     "Refreshes all open buffers from their respective files."
     (interactive)

@@ -64,7 +64,7 @@
       helm-reuse-last-window-split-state         t
       helm-split-window-default-side             'below
       ;helm-split-window-in-side-p                t
-      ;helm-echo-input-in-header-line             t
+      helm-echo-input-in-header-line             t
       helm-always-two-windows                    t
       ;helm-persistent-action-use-special-display t
       helm-buffers-favorite-modes                (append helm-buffers-favorite-modes
