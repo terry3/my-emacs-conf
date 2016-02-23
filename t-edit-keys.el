@@ -111,7 +111,8 @@
 ;; set refresh keys, reload current buffer
 (defun refresh-file ()
   (interactive)
-  (revert-buffer t (not (buffer-modified-p)) t))
+  (revert-buffer t (not (buffer-modified-p)) t)
+  (message "Reverted: %s" (buffer-file-name)))
 
 (global-set-key (kbd "<f5>") 'refresh-file)
 ;; set key to cycle the windows

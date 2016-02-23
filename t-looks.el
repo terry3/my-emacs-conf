@@ -1,4 +1,6 @@
 (require 'dired+)
+;; display dired details always
+(setq diredp-hide-details-initially-flag nil)
 ;; set emacs title
 (setq frame-title-format "%f:_terry3")
 ;; set system clip
