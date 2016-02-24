@@ -1,9 +1,5 @@
-*#
-.*
-var/
-*/
-*
-!t-*.el
+/*
 !init.el
 !.gitignore
 !README.md
+!/t-lisp
