@@ -1,5 +1,5 @@
 ;; hightlight
-(require 'highlight-symbol)
+(el-get-bundle 'highlight-symbol)
 (setq highlight-symbol-idle-delay 0.5)
 (highlight-symbol-mode t)
 

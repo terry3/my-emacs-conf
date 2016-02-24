@@ -1,9 +1,11 @@
-(require 'js2-mode)
+(el-get-bundle 'js2-mode)
 ;; (require 'ac-js2)
 ;; include flymake
-(require 'flymake)
-(require 'flymake-jshint)
-(require 'flymake-cursor)
+(el-get-bundle 'flymake)
+(el-get-bundle 'flymake-jshint
+  :url "https://github.com/Wilfred/flymake-jshint.el/blob/master/flymake-jshint.el")
+(el-get-bundle 'flymake-cursor
+  :url "https://www.emacswiki.org/emacs/flymake-cursor.el")
 ;; add flymake to js hook
 (add-hook 'javascript-mode-hook
           (lambda () (flymake-mode t)))

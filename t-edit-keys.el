@@ -5,10 +5,10 @@
 ;; (global-set-key (kbd "C-8") 'previous-buffer)
 ;; (global-set-key (kbd "C-7") 'next-buffer)
 ;; back-button control the navigation in windows
-(require 'back-button)
+(el-get-bundle 'back-button)
 (back-button-mode 1)
 
-(require 'whole-line-or-region)
+(el-get-bundle 'whole-line-or-region)
 ;;'M-w' copies the current line when the region is not active
 ;;'C-w' deletes it.
 (whole-line-or-region-mode t)
@@ -47,13 +47,15 @@
 ;; what's this?
 (transient-mark-mode t)
 
-;; require smartparens
+;; smartparens
+(el-get-bundle 'smartparens)
 (smartparens-global-mode t)
-(require 'smartparens-config)
-(show-smartparens-global-mode t)
+(el-get-bundle 'smartparens-config
+  :url "https://github.com/Fuco1/smartparens/blob/master/smartparens-config.el"
+  (show-smartparens-global-mode t))
 
 ;; auto expand-region "auto-expand"
-(require 'expand-region)
+(el-get-bundle 'expand-region)
 (global-set-key (kbd "C-0") 'er/expand-region)
 
 ;; Rectangle selections, and overwrite text when the selection is active
@@ -66,7 +68,7 @@
 (global-set-key (kbd "C-x C-.") 'pop-global-mark)
 
 ;; ace jump
-(require 'ace-jump-mode)
+(el-get-bundle 'ace-jump-mode)
 (global-set-key (kbd "C-,") 'ace-jump-mode)
 ;; When org-mode starts it (org-mode-map) overrides the ace-jump-mode.
 (add-hook 'org-mode-hook

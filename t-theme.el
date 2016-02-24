@@ -18,6 +18,9 @@
 ;; (enable-theme 'ample-light)
 ;; (require 'color-theme-sanityinc-tomorrow)
 
-(load-theme 'zenburn t)
+;; With initialization code
+(el-get-bundle zenburn-theme
+  :url "https://raw.githubusercontent.com/bbatsov/zenburn-emacs/master/zenburn-theme.el"
+  (load-theme 'zenburn t))
 
 (provide 't-theme)

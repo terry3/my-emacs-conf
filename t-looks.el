@@ -1,4 +1,4 @@
-(require 'dired+)
+(el-get-bundle 'dired+)
 ;; display dired details always
 (setq diredp-hide-details-initially-flag nil)
 ;; set emacs title
@@ -79,7 +79,7 @@
 ;;(add-hook 'after-init-hook '(lambda () (sr-speedbar-toggle)))
 ;; (global-set-key (kbd "C-9") 'sr-speedbar-select-window)
 
-(require 'highlight)
+(el-get-bundle 'highlight)
 ;; really shit in windows
 ;; (require 'powerline)
 
@@ -143,8 +143,9 @@
 ;;                                   (inhibit-same-window . t)))))
 
 ;; smart-mode-line
+(el-get-bundle 'smart-mode-line)
 (sml/setup)
 
 ;; 80 col
-(require 'fill-column-indicator)
+(el-get-bundle 'fill-column-indicator)
 (provide 't-looks)

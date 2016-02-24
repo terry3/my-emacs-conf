@@ -1,5 +1,5 @@
 ;; Enable CEDET
-(require 'cedet)
+(el-get-bundle 'cedet)
 (global-ede-mode 1)                      ; Enable the Project management system
 (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
 
@@ -30,7 +30,7 @@
         "C:/MinGW/include/c++/3.4.5/backward"
         "C:/MinGW/lib/gcc/mingw32/3.4.5/include"
         "C:/Program Files/Microsoft Visual Studio/VC98/MFC/Include"))
-(require 'semantic-c nil 'noerror)
+(el-get-bundle 'semantic-c nil 'noerror)
 (let ((include-dirs cedet-user-include-dirs))
   (when (eq system-type 'windows-nt)
     (setq include-dirs (append include-dirs cedet-win32-include-dirs)))

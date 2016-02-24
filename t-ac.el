@@ -1,5 +1,6 @@
-(require 'auto-complete)
-(require 'auto-complete-config)
+(el-get-bundle 'auto-complete)
+(el-get-bundle 'auto-complete-config
+  :url "https://github.com/auto-complete/auto-complete/blob/master/auto-complete-config.el")
 ;; (global-auto-complete-mode t)
 ;; (setq ac-expand-on-auto-complete nil)
 ;; (setq ac-auto-start nil)

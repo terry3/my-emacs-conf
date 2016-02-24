@@ -1,5 +1,6 @@
-(require 'helm)
-(require 'helm-config)
+(el-get-bundle helm)
+(el-get-bundle helm-config
+  :url "https://github.com/emacs-helm/helm/blob/master/helm-config.el")
 
 ;;; Enable Modes (This is loading nearly everything).
 ;;
@@ -113,5 +114,5 @@
       "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=")
 
 ;; set helm-ls-git
-(require 'helm-ls-git)
+(el-get-bundle 'helm-ls-git)
 (provide 't-helm)

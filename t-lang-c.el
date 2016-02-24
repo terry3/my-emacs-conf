@@ -1,7 +1,7 @@
-(require 'xcscope)
+(el-get-bundle 'xcscope)
 (add-hook 'c-mode-common-hook
           '(lambda ()
-             (require 'xcscope)))
+             (el-get-bundle 'xcscope)))
 
 ;; 不自动更新cscope数据库
 (setq cscope-do-not-update-database t)
