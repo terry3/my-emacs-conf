@@ -24,8 +24,6 @@
 (require 't-util)
 ;; config emacs look like
 (require 't-theme)
-;; cedet
-;(require 't-cedet)
 ;; markdown
 (require 't-md)
 ;; perl

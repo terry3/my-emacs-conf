@@ -1,4 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 ;; It's very important to add this 2013-09-30
 (require 'package)
 (package-initialize)

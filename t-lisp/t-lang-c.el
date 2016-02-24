@@ -3,9 +3,9 @@
           '(lambda ()
              (el-get-bundle 'xcscope)))
 
-;; 不自动更新cscope数据库
+;; do not update database auto
 (setq cscope-do-not-update-database t)
-;; 自动使用-q选项
+;; add -q param cuz it's quick
 (setq cscope-option-use-inverted-index t)
 
 
