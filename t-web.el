@@ -1,4 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/out/web-beautify")
 (el-get-bundle 'web-beautify
   :url "https://github.com/yasuyk/web-beautify/blob/master/web-beautify.el")
 ;; Not necessary if using ELPA package
