@@ -1,5 +1,4 @@
 (add-to-list 'load-path "~/.emacs.d/t-lisp")
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (require 't-package)
 ;; backup files
 (require 't-backup)
@@ -47,9 +46,10 @@
 (require 't-web)
 ;; yaml
 (require 't-yaml)
-
+;; common lisp
+(require 't-cl)
+;; sync recipes now
 (el-get 'sync)
-
 (provide 't-init)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
