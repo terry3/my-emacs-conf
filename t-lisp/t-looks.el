@@ -144,6 +144,7 @@
 
 ;; smart-mode-line
 (el-get-bundle 'smart-mode-line)
+(setq sml/no-confirm-load-theme t)
 (sml/setup)
 
 ;; 80 col

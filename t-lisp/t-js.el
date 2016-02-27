@@ -4,8 +4,7 @@
 (el-get-bundle 'flymake)
 (el-get-bundle 'flymake-jshint
   :url "https://github.com/Wilfred/flymake-jshint.el/blob/master/flymake-jshint.el")
-(el-get-bundle 'flymake-cursor
-  :url "https://www.emacswiki.org/emacs/flymake-cursor.el")
+(el-get-bundle 'flymake-cursor)
 ;; add flymake to js hook
 (add-hook 'javascript-mode-hook
           (lambda () (flymake-mode t)))

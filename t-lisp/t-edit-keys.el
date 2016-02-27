@@ -8,7 +8,8 @@
 (el-get-bundle 'back-button)
 (back-button-mode 1)
 
-(el-get-bundle 'whole-line-or-region)
+(el-get-bundle 'whole-line-or-region
+  :url "https://raw.githubusercontent.com/purcell/whole-line-or-region/master/whole-line-or-region.el")
 ;;'M-w' copies the current line when the region is not active
 ;;'C-w' deletes it.
 (whole-line-or-region-mode t)
