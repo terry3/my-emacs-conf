@@ -117,7 +117,8 @@
   (revert-buffer t (not (buffer-modified-p)) t)
   (message "Reverted: %s" (buffer-file-name)))
 
-(global-set-key (kbd "<f5>") 'refresh-file)
+(global-set-key (kbd "<f5>") 'revert-buffer)
+
 ;; set key to cycle the windows
 (global-set-key (kbd "M-`") 'other-window)
 
