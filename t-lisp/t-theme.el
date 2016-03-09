@@ -19,11 +19,8 @@
 ;; (require 'color-theme-sanityinc-tomorrow)
 
 ;; With initialization code
-;; (el-get-bundle zenburn-theme
-;;   :url "https://raw.githubusercontent.com/bbatsov/zenburn-emacs/master/zenburn-theme.el")
+(el-get-bundle zenburn-theme
+  :url "https://raw.githubusercontent.com/bbatsov/zenburn-emacs/master/zenburn-theme.el")
+(require 'zenburn-theme)
 
-;; set color theme to solarized
-(el-get-bundle color-theme-solarized)
-(setq frame-background-mode 'dark)
-(load-theme 'solarized t)
 (provide 't-theme)
