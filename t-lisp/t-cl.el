@@ -14,4 +14,22 @@
                                  (or (sp--org-skip-markup ms mb me)
                                      (not (sp-point-in-string-or-comment))))
                                 (t (not (sp-point-in-string-or-comment)))))))
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (company-mode)
+            (set (make-local-variable 'company-backends)
+                 '((company-yasnippet
+                    company-keywords
+                    company-dabbrev-code
+                    company-elisp)))))
+
+(add-hook 'lisp-mode-hook
+          (lambda ()
+            (company-mode)
+            (set (make-local-variable 'company-backends)
+                 '((company-yasnippet
+                    company-keywords
+                    company-dabbrev-code)))))
+
 (provide 't-cl)

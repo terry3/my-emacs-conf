@@ -15,5 +15,16 @@
 (setq js2-basic-offset 2)
 (setq js2-indent-switch-body t)
 
+
 (add-hook 'js2-mode-hook 'company-mode)
+(add-hook 'js2-mode-hook 'semantic-mode)
+;; (add-hook 'js2-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '((company-yasnippet company-keywords company-capf company-dabbrev-code)))))
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 '((company-yasnippet company-dabbrev-code)))))
+
 (provide 't-js)
