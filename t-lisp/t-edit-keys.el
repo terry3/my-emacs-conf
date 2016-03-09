@@ -1,13 +1,3 @@
-;; change buffer
-;; (global-set-key (kbd "<f9>") 'back-button-global-backward)
-;; (global-set-key (kbd "<f10>") 'back-button-global-forward)
-
-;; (global-set-key (kbd "C-8") 'previous-buffer)
-;; (global-set-key (kbd "C-7") 'next-buffer)
-;; back-button control the navigation in windows
-(el-get-bundle 'back-button)
-(back-button-mode 1)
-
 (el-get-bundle 'whole-line-or-region
   :url "https://raw.githubusercontent.com/purcell/whole-line-or-region/master/whole-line-or-region.el")
 ;;'M-w' copies the current line when the region is not active

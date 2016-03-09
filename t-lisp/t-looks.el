@@ -85,6 +85,7 @@
 
 ;; turn on highlighting current line
 (global-hl-line-mode 1)
+(set-face-background hl-line-face "gray13")
 
 (defun remove-dos-eol ()
   "Do not show ^M in files containing mixed UNIX and DOS line endings."
@@ -143,10 +144,10 @@
 ;;                                   (inhibit-same-window . t)))))
 
 ;; smart-mode-line
-(el-get-bundle 'smart-mode-line)
-(setq sml/no-confirm-load-theme t)
-(sml/setup)
+;; (el-get-bundle 'smart-mode-line)
+;; (setq sml/no-confirm-load-theme t)
+;; (sml/setup)
 
 ;; 80 col
-(el-get-bundle 'fill-column-indicator)
+;; (el-get-bundle 'fill-column-indicator)
 (provide 't-looks)

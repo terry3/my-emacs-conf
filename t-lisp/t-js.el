@@ -14,7 +14,6 @@
 
 (setq js2-basic-offset 2)
 (setq js2-indent-switch-body t)
-;; ac-js2
-;; (add-hook 'js2-mode-hook 'ac-js2-mode)
 
+(add-hook 'js2-mode-hook 'company-mode)
 (provide 't-js)
