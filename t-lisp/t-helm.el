@@ -9,33 +9,31 @@
 (helm-autoresize-mode 1)
 (helm-push-mark-mode 1)
 
+
 ;;; Global-map
 ;;
 ;;
 (global-set-key (kbd "M-x")                          'undefined)
 (global-set-key (kbd "M-x")                          'helm-M-x)
 (global-set-key (kbd "M-y")                          'helm-show-kill-ring)
-(global-set-key (kbd "C-c f")                        'helm-recentf) ;recent file
 (global-set-key (kbd "C-x C-f")                      'helm-find-files)
 (global-set-key (kbd "C-c <SPC>")                    'helm-all-mark-rings)
 (global-set-key (kbd "C-x r b")                      'helm-filtered-bookmarks)
 (global-set-key (kbd "C-h r")                        'helm-info-emacs)
 (global-set-key (kbd "C-h i")                        'helm-info-at-point)
 (global-set-key (kbd "C-x C-d")                      'helm-browse-project)
-(global-set-key (kbd "C-x C-b")                      'helm-buffers-list)
-(global-set-key (kbd "C-x b")                        'helm-mini)
+(global-set-key (kbd "<f1>")                         'helm-resume)
 (global-set-key (kbd "C-h C-f")                      'helm-apropos)
-;;(global-set-key (kbd "<f5> s")                       'helm-find)
-(global-set-key (kbd "C-c g")                        'helm-gid)
+(global-set-key (kbd "C-h a")                        'helm-apropos)
+(global-set-key (kbd "<f2>")                         'helm-execute-kmacro)
 (global-set-key (kbd "C-c i")                        'helm-imenu-in-all-buffers)
+(global-set-key (kbd "C-s")                          'helm-occur)
+
 (define-key global-map [remap jump-to-register]      'helm-register)
 ;;(define-key global-map [remap list-buffers]          'helm-buffers-list)
 (define-key global-map [remap dabbrev-expand]        'helm-dabbrev)
 (define-key global-map [remap find-tag]              'helm-etags-select)
 (define-key global-map [remap xref-find-definitions] 'helm-etags-select)
-(define-key shell-mode-map (kbd "M-p")               'helm-comint-input-ring) ; shell history.
-
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i")   'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")   'helm-select-action) ; list actions using C-z
 
@@ -51,7 +49,7 @@
       ;helm-display-source-at-screen-top          nil
       helm-ff-search-library-in-sexp             t
       ;helm-kill-ring-max-lines-number            5
-      helm-default-external-file-browser         "thunar"
+      ;helm-default-external-file-browser         "thunar"
       ;helm-pdfgrep-default-read-command          "evince --page-label=%p '%f'"
       ;helm-ff-transformer-show-only-basename     t
       helm-ff-auto-update-initial-value          t
@@ -63,7 +61,7 @@
       helm-default-zgrep-command                 "zgrep --color=always -a -n%cH -e %p %f"
       ;helm-pdfgrep-default-command               "pdfgrep --color always -niH %s %s"
       helm-reuse-last-window-split-state         t
-      helm-split-window-default-side             'below
+      helm-split-window-default-side             'above
       ;helm-split-window-in-side-p                t
       helm-echo-input-in-header-line             t
       helm-always-two-windows                    t
@@ -96,7 +94,7 @@
       helm-buffers-fuzzy-matching                 t
       helm-locate-command                         "locate %s -e -A --regex %s"
       helm-org-headings-fontify                   t
-      helm-autoresize-max-height                  80 ; it is %.
+      helm-autoresize-max-height                  40 ; it is %.
       helm-autoresize-min-height                  20 ; it is %.
       helm-buffers-to-resize-on-pa                '("*helm apropos*" "*helm ack-grep*"
                                                     "*helm grep*" "*helm occur*"

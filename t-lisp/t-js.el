@@ -1,5 +1,4 @@
 (el-get-bundle 'js2-mode)
-;; (require 'ac-js2)
 ;; include flymake
 (el-get-bundle 'flymake)
 (el-get-bundle 'flymake-jshint
@@ -18,10 +17,6 @@
 
 (add-hook 'js2-mode-hook 'company-mode)
 (add-hook 'js2-mode-hook 'semantic-mode)
-;; (add-hook 'js2-mode-hook
-;;           (lambda ()
-;;             (set (make-local-variable 'company-backends)
-;;                  '((company-yasnippet company-keywords company-capf company-dabbrev-code)))))
 (add-hook 'js2-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
