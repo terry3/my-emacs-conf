@@ -39,6 +39,9 @@
 (define-key helm-map (kbd "C-z")   'helm-select-action) ; list actions using C-z
 (define-key global-map (kbd "M-g a")                 'helm-do-grep-ag)
 
+(add-hook 'helm-after-initialize-hook
+          #'(lambda () (helm-attrset 'follow 1 helm-source-occur)))
+
 ;;; Helm-variables
 (setq helm-google-suggest-use-curl-p             t
       helm-raise-command                         "wmctrl -xa %s"
@@ -83,7 +86,7 @@
       ;helm-tramp-verbose                         6
       helm-buffer-skip-remote-checking            t
       ;helm-ff-file-name-history-use-recentf      t
-      ;helm-follow-mode-persistent                t
+      helm-follow-mode-persistent                 t
       helm-apropos-fuzzy-match                    t
       helm-M-x-fuzzy-match                        t
       helm-lisp-fuzzy-completion                  t
@@ -100,7 +103,7 @@
       helm-autoresize-min-height                  20 ; it is %.
       helm-buffers-to-resize-on-pa                '("*helm apropos*" "*helm ack-grep*"
                                                     "*helm grep*" "*helm occur*" "*helm ag*"
-                                                    "*helm multi occur*" "*helm lsgit*"
+                                                    "*helm multi occur*" "*helm lsgit*" "*helm occur*"
                                                     "*helm git-grep*" "*helm hg files*"
                                                     "*helm imenu*" "*helm imenu all*"
                                                     "*helm gid*" "*helm semantic/imenu*")
