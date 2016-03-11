@@ -39,13 +39,13 @@
 ;; set <F5> to the leader of C-c w
 ;;(require 'xgtags-extension)
 
-;; find global file
-(global-set-key (kbd "M-4") 'cscope-find-this-file)
-;; find global reference
-(global-set-key (kbd "M-3") 'cscope-find-this-symbol)
-;; find global definition
-(global-set-key (kbd "M-2") 'cscope-find-global-definition)
-;; return to prev position
-(global-set-key (kbd "M-1") 'cscope-pop-mark)
+;; ;; find global file
+;; (global-set-key (kbd "M-4") 'cscope-find-this-file)
+;; ;; find global reference
+;; (global-set-key (kbd "M-3") 'cscope-find-this-symbol)
+;; ;; find global definition
+;; (global-set-key (kbd "M-2") 'cscope-find-global-definition)
+;; ;; return to prev position
+;; (global-set-key (kbd "M-1") 'cscope-pop-mark)
 
 (provide 't-lang-c)

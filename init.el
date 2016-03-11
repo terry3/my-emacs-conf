@@ -44,6 +44,8 @@
 (require 't-cl)
 ;; complete sth
 (require 't-complete)
+;; project
+(require 't-projectile)
 ;; sync recipes now
 (el-get 'sync)
 (provide 't-init)

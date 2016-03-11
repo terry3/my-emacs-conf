@@ -1,6 +1,7 @@
 (el-get-bundle helm)
 (el-get-bundle helm-config
   :url "https://github.com/emacs-helm/helm/blob/master/helm-config.el")
+(el-get-bundle helm-ag)
 
 ;;; Enable Modes (This is loading nearly everything).
 ;;
@@ -22,7 +23,7 @@
 (global-set-key (kbd "C-h r")                        'helm-info-emacs)
 (global-set-key (kbd "C-h i")                        'helm-info-at-point)
 (global-set-key (kbd "C-x C-d")                      'helm-browse-project)
-(global-set-key (kbd "<f1>")                         'helm-resume)
+(global-set-key (kbd "M-3")                          'helm-resume)
 (global-set-key (kbd "C-h C-f")                      'helm-apropos)
 (global-set-key (kbd "C-h a")                        'helm-apropos)
 (global-set-key (kbd "<f2>")                         'helm-execute-kmacro)
@@ -36,6 +37,7 @@
 (define-key global-map [remap xref-find-definitions] 'helm-etags-select)
 (define-key helm-map (kbd "C-i")   'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")   'helm-select-action) ; list actions using C-z
+(define-key global-map (kbd "M-g a")                 'helm-do-grep-ag)
 
 ;;; Helm-variables
 (setq helm-google-suggest-use-curl-p             t
@@ -97,7 +99,7 @@
       helm-autoresize-max-height                  40 ; it is %.
       helm-autoresize-min-height                  20 ; it is %.
       helm-buffers-to-resize-on-pa                '("*helm apropos*" "*helm ack-grep*"
-                                                    "*helm grep*" "*helm occur*"
+                                                    "*helm grep*" "*helm occur*" "*helm ag*"
                                                     "*helm multi occur*" "*helm lsgit*"
                                                     "*helm git-grep*" "*helm hg files*"
                                                     "*helm imenu*" "*helm imenu all*"
