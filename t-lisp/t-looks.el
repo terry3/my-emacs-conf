@@ -99,9 +99,6 @@
   (setq buffer-display-table (make-display-table))
   (aset buffer-display-table ?\^M []))
 
-;; set emacs split windows horizontally  default
-(setq split-height-threshold nil)
-(setq split-width-threshold 0)
 
 ;; set emacs to reuse windows
 ;;;---------------------------------------------------------------------
@@ -113,7 +110,12 @@
 ;; The code below will make Emacs reuse existing windows, with the
 ;; exception that if have a single window open in a large display, it
 ;; will be split horisontally.
-(setq pop-up-windows nil)
+;; (setq pop-up-windows nil)
+;; set emacs split windows horizontally  default
+;; (setq split-height-threshold nil)
+;; (setq split-width-threshold 0)
+
+;; (setq pop-up-windows t)
 
 (defun my-display-buffer-function (buf not-this-window)
   (if (and (not pop-up-frames)
