@@ -5,7 +5,7 @@ my-emacs-conf
 This emacs.d config only for **Mac OS**, just for my daily use.
 
 ## Preparation
-I do use common lisp for trainning my skills, so if you want install successfully with the default config, you must install the below things.
+I do use lisp for trainning my skills, so if you want install successfully with the default config, you must install the below things.
 ```bash
 $ brew install texinfo
 $ brew link texinfo
