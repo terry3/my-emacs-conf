@@ -10,9 +10,10 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsm\\'" . js2-mode))
-;; set offset in js2-mode
-(setq js2-basic-offset 2)
-(setq js2-indent-switch-body t)
+
+;; set js2-mode variables
+(setq js2-basic-offset 2        ; set offset in js2-mode
+      js2-indent-switch-body t) ; set indent in switch statement
 
 ;; set complete source
 (add-hook 'js2-mode-hook

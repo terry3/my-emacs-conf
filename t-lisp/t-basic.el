@@ -5,7 +5,7 @@
       backup-directory-alist
       '(("." . "~/.emacs_backup"))
       delete-old-versions t ; delete old version auto
-      kept-new-versions 6 ; keep 6 backup
+      kept-new-versions 6   ; keep 6 backup
       kept-old-versions 2
       version-control t)
 
@@ -26,27 +26,22 @@
  show-trailing-whitespace t
  truncate-lines nil
  truncate-partial-width-windows nil
- )
+ buffer-file-coding-system 'utf-8-unix
+ default-buffer-file-coding-system 'utf-8-unix)
+
+
+(setq x-select-enable-clipboard t ; set system clip
+      column-number-mode t        ; display column number
+      default-tab-width 4         ;tab = 4 blank
+      kill-whole-line t)          ;kill the whole line
+
+;; encoding
+;; set default buffer file system coding
+(set-default-coding-systems 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
 
 ;; set visual active
 (transient-mark-mode t)
-;; set system clip
-(setq x-select-enable-clipboard t)
-;; display column number
-(setq column-number-mode t)
-;; tab = 4 blank
-(setq default-tab-width 4)
-;; kill the whole line
-(setq kill-whole-line t)
-
-;; encoding
-;;
-;;
-;; set default buffer file system coding
-(set-default buffer-file-coding-system 'utf-8-unix)
-(set-default-coding-systems 'utf-8-unix)
-(prefer-coding-system 'utf-8-unix)
-(set-default default-buffer-file-coding-system 'utf-8-unix)
 
 ;; save desktop
 (desktop-save-mode 1)

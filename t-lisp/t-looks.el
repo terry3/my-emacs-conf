@@ -13,8 +13,6 @@
 ;;(setq-default cursor-type 'box)
 
 (el-get-bundle 'highlight)
-;; really shit in windows
-;; (require 'powerline)
 
 ;; turn on highlighting current line
 (global-hl-line-mode 1)
