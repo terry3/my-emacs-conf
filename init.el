@@ -1,51 +1,23 @@
 (add-to-list 'load-path "~/.emacs.d/t-lisp")
+
 (require 't-package)
-;; backup files
-(require 't-backup)
-;; tiny looks
-(require 't-looks)
-;; config emacs look like
-(require 't-theme)
-;; yas
-(require 't-yasnippet)
-;; util edit keys
-(require 't-edit-keys)
-;; include comman keys settings
-(require 't-keys)
-;; lang-c
-(require 't-lang-c)
-;; session
-(require 't-session)
-;; org-mode
-(require 't-org)
-;; misc util
-(require 't-util)
-;; markdown
-(require 't-md)
-;; perl
-(require 't-perl)
-;; evil
-(require 't-evil)
-;; git&git front end config
-(require 't-git)
-;; highlight mode
-(require 't-hl)
-;; javescript config
-(require 't-js)
-;; enable helm
+(require 't-basic)
+(require 't-func)
 (require 't-helm)
-;; css config
-(require 't-css)
-;; web
-(require 't-web)
-;; yaml
-(require 't-yaml)
-;; lisp
-(require 't-lisp)
-;; complete sth
 (require 't-complete)
-;; project
 (require 't-projectile)
-;; sync recipes now
+(require 't-mac)
+(require 't-edit)
+(require 't-looks)
+(require 't-theme)
+(require 't-yasnippet)
+(require 't-lang-c)
+(require 't-md)
+(require 't-perl)
+(require 't-git)
+(require 't-js)
+(require 't-css)
+(require 't-lisp)
+
 (el-get 'sync)
 (provide 't-init)

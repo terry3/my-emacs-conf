@@ -1,5 +1,6 @@
+;; set offset in css mode.
 (setq css-indent-offset 2)
-
+;; set company complete source
 (add-hook 'css-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)

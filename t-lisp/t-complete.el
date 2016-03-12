@@ -14,6 +14,7 @@
 ;; set global key to invoke complete popup window
 (global-set-key (kbd "M-e") 'company-filter-candidates)
 
+;; start complete when type just 1 character
 (setq company-minimum-prefix-length 1)
 
 (global-company-mode)
