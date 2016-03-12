@@ -1,3 +1,4 @@
+(el-get-bundle dash)
 (el-get-bundle helm)
 (el-get-bundle helm-config
   :url "https://github.com/emacs-helm/helm/blob/master/helm-config.el")
@@ -114,7 +115,9 @@
 
 ;; set helm-ls-git
 (el-get-bundle 'helm-ls-git)
-;; (add-hook 'helm-after-initialize-hook
-;;           #'(lambda () (helm-attrset 'follow 1 helm-source-occur)))
+
+;; enable follow mode
+(defmethod helm-setup-user-source ((source helm-source-multi-occur))
+  (oset source :follow 1))
 
 (provide 't-helm)
