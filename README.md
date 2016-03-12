@@ -12,7 +12,7 @@ $ brew link texinfo
 ```
 Or you just can comment the code in init.el
 ```Emacs-Lisp
-;; (require 't-cl)
+;; (require 't-lisp)
 ```
 
 ## Install

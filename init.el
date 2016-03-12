@@ -40,8 +40,8 @@
 (require 't-web)
 ;; yaml
 (require 't-yaml)
-;; common lisp
-(require 't-cl)
+;; lisp
+(require 't-lisp)
 ;; complete sth
 (require 't-complete)
 ;; project

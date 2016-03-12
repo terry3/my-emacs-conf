@@ -32,4 +32,4 @@
                     company-keywords
                     company-dabbrev-code)))))
 
-(provide 't-cl)
+(provide 't-lisp)
