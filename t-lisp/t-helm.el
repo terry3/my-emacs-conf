@@ -39,9 +39,6 @@
 (define-key helm-map (kbd "C-z")   'helm-select-action) ; list actions using C-z
 (define-key global-map (kbd "M-g a")                 'helm-do-grep-ag)
 
-(add-hook 'helm-after-initialize-hook
-          #'(lambda () (helm-attrset 'follow 1 helm-source-occur)))
-
 ;;; Helm-variables
 (setq helm-google-suggest-use-curl-p             t
       helm-raise-command                         "wmctrl -xa %s"
@@ -118,4 +115,7 @@
 
 ;; set helm-ls-git
 (el-get-bundle 'helm-ls-git)
+;; (add-hook 'helm-after-initialize-hook
+;;           #'(lambda () (helm-attrset 'follow 1 helm-source-occur)))
+
 (provide 't-helm)
