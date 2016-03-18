@@ -1,5 +1,5 @@
-(el-get-bundle slime)
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
+;; (el-get-bundle slime)
+;; (setq inferior-lisp-program "/usr/local/bin/sbcl")
 
 (sp-with-modes sp--lisp-modes
   ;; disable ', it's the quote character!
