@@ -72,7 +72,7 @@
                                                          '(picture-mode artist-mode))
       helm-ls-git-status-command                 'magit-status
       ;helm-never-delay-on-input                  nil
-      ;helm-candidate-number-limit                200
+      helm-candidate-number-limit                500
       helm-M-x-requires-pattern                  0
       helm-dabbrev-cycle-threshold                5
       ;helm-surfraw-duckduckgo-url                "https://duckduckgo.com/?q=%s&ke=-1&kf=fw&kl=fr-fr&kr=b&k1=-1&k4=-1"
