@@ -4,6 +4,8 @@
 (el-get-bundle 'flymake-jshint
   :url "https://github.com/Wilfred/flymake-jshint.el/blob/master/flymake-jshint.el")
 (el-get-bundle 'flymake-cursor)
+;; json-mode
+(el-get-bundle 'json-mode)
 ;; add flymake to js hook
 (add-hook 'javascript-mode-hook
           (lambda () (flymake-mode t)))
@@ -21,4 +23,6 @@
             (set (make-local-variable 'company-backends)
                  '((company-yasnippet company-dabbrev-code)))))
 
+;; autoload json file
+(add-to-list 'auto-mode-alist '("\\.webapp$" . json-mode))
 (provide 't-js)
