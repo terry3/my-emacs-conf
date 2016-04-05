@@ -8,7 +8,7 @@
 ;;
 (helm-mode 1)
 (helm-adaptive-mode 1)
-(helm-autoresize-mode 1)
+;;(helm-autoresize-mode 1)
 (helm-push-mark-mode 1)
 
 ;;; Global-map
@@ -62,8 +62,8 @@
       helm-ls-git-grep-command                   "git grep -n%cH --color=always --exclude-standard --no-index --full-name -e %p %f"
       helm-default-zgrep-command                 "zgrep --color=always -a -n%cH -e %p %f"
       ;helm-pdfgrep-default-command               "pdfgrep --color always -niH %s %s"
-      helm-reuse-last-window-split-state         t
-      helm-split-window-default-side             'above
+      ;helm-reuse-last-window-split-state         t
+      helm-split-window-default-side             'left
       ;helm-split-window-in-side-p                t
       helm-echo-input-in-header-line             t
       helm-always-two-windows                    t
@@ -96,14 +96,14 @@
       helm-buffers-fuzzy-matching                 t
       helm-locate-command                         "locate %s -e -A --regex %s"
       helm-org-headings-fontify                   t
-      helm-autoresize-max-height                  40 ; it is %.
-      helm-autoresize-min-height                  20 ; it is %.
-      helm-buffers-to-resize-on-pa                '("*helm apropos*" "*helm ack-grep*"
-                                                    "*helm grep*" "*helm occur*" "*helm ag*"
-                                                    "*helm multi occur*" "*helm lsgit*" "*helm occur*"
-                                                    "*helm git-grep*" "*helm hg files*"
-                                                    "*helm imenu*" "*helm imenu all*"
-                                                    "*helm gid*" "*helm semantic/imenu*")
+      ;; helm-autoresize-max-height                  40 ; it is %.
+      ;; helm-autoresize-min-height                  20 ; it is %.
+      ;; helm-buffers-to-resize-on-pa                '("*helm apropos*" "*helm ack-grep*"
+      ;;                                               "*helm grep*" "*helm occur*" "*helm ag*"
+      ;;                                               "*helm multi occur*" "*helm lsgit*" "*helm occur*"
+      ;;                                               "*helm git-grep*" "*helm hg files*"
+      ;;                                               "*helm imenu*" "*helm imenu all*"
+      ;;                                               "*helm gid*" "*helm semantic/imenu*")
       fit-window-to-buffer-horizontally           1
       helm-open-github-closed-issue-since         7
       helm-search-suggest-action-wikipedia-url
