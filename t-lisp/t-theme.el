@@ -4,7 +4,12 @@
 ;; (require 'zenburn-theme)
 
 ;; tangotango
-(el-get-bundle color-theme-tangotango)
-(color-theme-tangotango)
+;; (el-get-bundle color-theme-tangotango
+;;   (color-theme-tangotango))
+;;
+
+;; darkokai-theme
+(el-get-bundle elpa:darkokai-theme
+  (load-theme 'darkokai t))
 
 (provide 't-theme)
