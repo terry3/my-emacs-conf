@@ -9,7 +9,9 @@
 ;;
 
 ;; darkokai-theme
-(el-get-bundle elpa:darkokai-theme
-  (load-theme 'darkokai t))
+(el-get-bundle sjrmanning/darkokai
+  (progn
+    (require 'darkokai-theme)
+    (load-theme 'darkokai t)))
 
 (provide 't-theme)
