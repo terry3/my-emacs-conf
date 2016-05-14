@@ -63,7 +63,7 @@
       helm-default-zgrep-command                 "zgrep --color=always -a -n%cH -e %p %f"
       ;helm-pdfgrep-default-command               "pdfgrep --color always -niH %s %s"
       ;helm-reuse-last-window-split-state         t
-      helm-split-window-default-side             'left
+      helm-split-window-default-side             'above
       ;helm-split-window-in-side-p                t
       helm-echo-input-in-header-line             t
       helm-always-two-windows                    t
