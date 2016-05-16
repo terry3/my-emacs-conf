@@ -15,7 +15,8 @@
 
 ;; set js2-mode variables
 (setq js2-basic-offset 2        ; set offset in js2-mode
-      js2-indent-switch-body t) ; set indent in switch statement
+      js2-indent-switch-body t  ; set indent in switch statement
+      js-indent-level 2)        ; set json indent width
 
 ;; set complete source
 (add-hook 'js2-mode-hook
