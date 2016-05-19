@@ -12,6 +12,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsm\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 
 ;; set js2-mode variables
 (setq js2-basic-offset 2        ; set offset in js2-mode
