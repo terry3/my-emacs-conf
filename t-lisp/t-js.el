@@ -15,9 +15,9 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 
 ;; set js2-mode variables
-(setq js2-basic-offset 2        ; set offset in js2-mode
+(setq js2-basic-offset 4        ; set offset in js2-mode
       js2-indent-switch-body t  ; set indent in switch statement
-      js-indent-level 2)        ; set json indent width
+      js-indent-level 4)        ; set json indent width
 
 ;; set complete source
 (add-hook 'js2-mode-hook
