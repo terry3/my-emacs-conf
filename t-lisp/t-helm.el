@@ -2,6 +2,7 @@
 (el-get-bundle helm)
 (el-get-bundle helm-config
   :url "https://github.com/emacs-helm/helm/blob/master/helm-config.el")
+(el-get-bundle ag)
 (el-get-bundle helm-ag)
 
 ;;; Enable Modes (This is loading nearly everything).
