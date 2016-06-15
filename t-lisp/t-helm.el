@@ -56,8 +56,8 @@
       ;helm-pdfgrep-default-read-command          "evince --page-label=%p '%f'"
       ;helm-ff-transformer-show-only-basename     t
       helm-ff-auto-update-initial-value          t
-      helm-grep-default-command                  "ggrep --color=always -d skip %e -n%cH -e %p %f"
-      helm-grep-default-recurse-command          "ggrep --color=always -d recurse %e -n%cH -e %p %f"
+      ;helm-grep-default-command                  "ack-grep -Hn --color --smart-case --no-group %e %p %f"
+      ;helm-grep-default-recurse-command          "ack-grep -H --color --smart-case --no-group %e %p %f"
       ;; Allow skipping unwanted files specified in ~/.gitignore_global
       ;; Added in my .gitconfig with "git config --global core.excludesfile ~/.gitignore_global"
       helm-ls-git-grep-command                   "git grep -n%cH --color=always --exclude-standard --no-index --full-name -e %p %f"
