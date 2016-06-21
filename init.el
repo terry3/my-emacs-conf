@@ -16,8 +16,10 @@
 (require 't-perl)
 (require 't-git)
 (require 't-js)
+(require 't-web)
 (require 't-css)
 (require 't-lisp)
+(require 't-org)
 
 (el-get 'sync)
 (provide 't-init)
