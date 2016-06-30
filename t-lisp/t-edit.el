@@ -49,4 +49,4 @@
 (global-set-key (kbd "M-l") 'terry3/toggle-comment-current-line)
 
 (provide 't-edit)
-
+;;; t-edit ends here

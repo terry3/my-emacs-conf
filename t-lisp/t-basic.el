@@ -10,8 +10,6 @@
       version-control t)
 
 ;; basic
-;;
-;;
 (setq-default
  blink-cursor-delay 0
  blink-cursor-interval 0.4
@@ -28,7 +26,6 @@
  truncate-partial-width-windows nil
  buffer-file-coding-system 'utf-8-unix
  default-buffer-file-coding-system 'utf-8-unix)
-
 
 (setq x-select-enable-clipboard t ; set system clip
       column-number-mode t        ; display column number

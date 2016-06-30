@@ -11,6 +11,7 @@
 (require 't-looks)
 (require 't-theme)
 (require 't-yasnippet)
+(require 't-flyc)
 (require 't-lang-c)
 (require 't-md)
 (require 't-perl)
