@@ -1,21 +1,22 @@
-(el-get-bundle 'js2-mode)
+;; web-mode
+(el-get-bundle 'web-mode)
 ;; json-mode
 (el-get-bundle 'json-mode)
-
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsm\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers '(javascript-jshint))
 
-;; set js2-mode variables
-(setq js2-basic-offset 2        ; set offset in js2-mode
-      js2-indent-switch-body t  ; set indent in switch statement
-      js-indent-level 2)        ; set json indent width
+;; set web-mode indent
+(setq web-mode-markup-indent-offset 2  ; html
+      web-mode-css-indent-offset    2  ; css
+      web-mode-code-indent-offset   2) ; js
+
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
 
 ;; set complete source
-(add-hook 'js2-mode-hook
+(add-hook 'web-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
                  '((company-yasnippet company-dabbrev-code)))))
