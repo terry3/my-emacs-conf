@@ -7,6 +7,6 @@
       (setq mac-option-modifier nil)
       (setq visible-bell nil)      ;; workaround the visible-bell in OSX EI
       (setq ring-bell-function 'ignore)
-      (set-default-font "Monaco 19")))
-
+      (set-default-font "Fira Mono 21")
+      (setq-default line-spacing 0)))
 (provide 't-mac)
