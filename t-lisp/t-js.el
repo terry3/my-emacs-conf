@@ -9,7 +9,10 @@
 ;; set web-mode indent
 (setq web-mode-markup-indent-offset 2  ; html
       web-mode-css-indent-offset    2  ; css
-      web-mode-code-indent-offset   2) ; js
+      web-mode-code-indent-offset   2  ; js
+      js-indent-level 2)               ; for json
+
+(setq )
 
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
