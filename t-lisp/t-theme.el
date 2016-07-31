@@ -8,10 +8,10 @@
 ;;   (color-theme-tangotango))
 ;;
 
-;; darkokai-theme
-(el-get-bundle sjrmanning/darkokai
+;; terry3/oceanic-theme
+(el-get-bundle terry3/oceanic-theme
   (progn
-    (require 'darkokai-theme)
-    (load-theme 'darkokai t)))
+    (require 'oceanic-theme)
+    (load-theme 'oceanic t)))
 
 (provide 't-theme)
