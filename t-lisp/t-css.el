@@ -1,4 +1,6 @@
 (el-get-bundle 'less-css-mode)
+(el-get-bundle 'sass-mode)
+
 ;; set offset in css mode.
 (setq css-indent-offset 2)
 ;; set company complete source
