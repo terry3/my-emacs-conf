@@ -4,8 +4,11 @@
 ;; (require 'zenburn-theme)
 
 ;; tangotango
-(el-get-bundle color-theme-tangotango
-  (color-theme-tangotango))
+;; (el-get-bundle color-theme-tangotango
+;;   (color-theme-tangotango))
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/atom-one-dark-theme/")
+(load-theme 'atom-one-dark t)
 
 ;; terry3/oceanic-theme
 ;; (el-get-bundle terry3/oceanic-theme

@@ -9,5 +9,8 @@
             (set (make-local-variable 'company-backends)
                  '((company-yasnippet company-css)))))
 
+;; add wx css file to css-mode
+(add-to-list 'auto-mode-alist '("\\.wxss\\'" . css-mode))
+
 (provide 't-css)
 
