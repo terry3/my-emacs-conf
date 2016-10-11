@@ -1,6 +1,5 @@
 (el-get-bundle 'company-mode
-  (progn
-    (require 'company)))
+  (require 'company))
 
 (el-get-bundle 'company-statistics
   (require 'company-statistics)
