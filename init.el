@@ -20,6 +20,7 @@
 (require 't-web)
 (require 't-css)
 (require 't-lisp)
+(require 't-rkt)
 (require 't-org)
 
 (el-get 'sync)

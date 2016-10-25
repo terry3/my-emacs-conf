@@ -7,8 +7,8 @@
 ;; (el-get-bundle color-theme-tangotango
 ;;   (color-theme-tangotango))
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/atom-one-dark-theme/")
-(load-theme 'atom-one-dark t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/misc/")
+(load-theme 'dracula t)
 
 ;; terry3/oceanic-theme
 ;; (el-get-bundle terry3/oceanic-theme

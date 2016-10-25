@@ -1,5 +1,10 @@
+(require 'package)
 ;; package management
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+;; add melpa to package-archives
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
 
 (package-initialize)
 (unless (require 'el-get nil 'noerror)

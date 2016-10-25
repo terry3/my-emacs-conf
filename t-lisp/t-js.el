@@ -20,7 +20,7 @@
 (add-hook 'web-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-yasnippet company-dabbrev-code)))))
+                 '((company-yasnippet company-dabbrev-code company-css)))))
 
 ;; autoload json file
 (add-to-list 'auto-mode-alist '("\\.webapp$" . json-mode))

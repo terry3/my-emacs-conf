@@ -13,4 +13,3 @@
 (add-to-list 'auto-mode-alist '("\\.wxss\\'" . css-mode))
 
 (provide 't-css)
-
