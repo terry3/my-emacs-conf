@@ -48,5 +48,8 @@
 ;; comment current line
 (global-set-key (kbd "M-l") 'terry3/toggle-comment-current-line)
 
+;; remove useless key binding
+(global-unset-key (kbd "M-c"))
+
 (provide 't-edit)
 ;;; t-edit ends here
