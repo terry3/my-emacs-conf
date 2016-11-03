@@ -23,6 +23,7 @@
                     company-keywords
                     company-dabbrev-code
                     company-elisp)))))
+
 ;; set complete source in common lisp
 (add-hook 'lisp-mode-hook
           (lambda ()
