@@ -1,6 +1,8 @@
 (require 'package)
 ;; package management
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(add-to-list 'load-path "~/.emacs.d/el-get/json-snatcher")
+(add-to-list 'load-path "~/.emacs.d/el-get/json-reformat")
 
 ;; add melpa to package-archives
 (add-to-list 'package-archives
