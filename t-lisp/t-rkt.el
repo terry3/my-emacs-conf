@@ -1,8 +1,8 @@
 (el-get-bundle rainbow-delimiters)
 (el-get-bundle 'racket-mode
   (require 'racket-mode)
-  (setq racket-racket-program "/Applications/Racket v6.6/bin//racket")
-  (setq racket-raco-program "/Applications/Racket v6.6/bin//raco")
+  (setq racket-racket-program "/Applications/Racket v6.7/bin//racket")
+  (setq racket-raco-program "/Applications/Racket v6.7/bin//raco")
   ;; remove <f5> key binding, set it to C-c r
   (add-hook 'racket-mode-hook
           (lambda ()

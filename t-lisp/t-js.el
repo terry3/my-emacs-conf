@@ -22,6 +22,9 @@
             (set (make-local-variable 'company-backends)
                  '((company-yasnippet company-dabbrev-code company-css)))))
 
+(add-hook 'web-mode-hook
+          #'(lambda () (yas-activate-extra-mode 'js-mode)))
+
 ;; autoload json file
 (add-to-list 'auto-mode-alist '("\\.webapp$" . json-mode))
 (provide 't-js)
