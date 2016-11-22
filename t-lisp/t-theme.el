@@ -8,7 +8,15 @@
 ;;   (color-theme-tangotango))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/misc/")
-(load-theme 'dracula t)
+
+;; (el-get-bundle john2x/flatui-theme.el
+;;   (require 'flatui-theme))
+
+(el-get-bundle leuven-theme
+  (load-theme 'leuven t)
+  (custom-theme-set-faces
+   'leuven
+   `(default ((t (:foreground "#333333" :background "#ecf0f1"))))))
 
 ;; terry3/oceanic-theme
 ;; (el-get-bundle terry3/oceanic-theme
