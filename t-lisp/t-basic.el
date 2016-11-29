@@ -80,6 +80,9 @@
 ;; append to *-init instead of itself
 (setq clean-buffer-list-kill-never-regexps
       (append '("^\\*EMMS Playlist\\*.*$")
-	      clean-buffer-list-kill-never-regexps-init))
+              clean-buffer-list-kill-never-regexps-init))
+
+;; To enable in all programming-related modes (Emacs 24+):
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 (provide 't-basic)

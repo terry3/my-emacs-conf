@@ -8,7 +8,6 @@
           (lambda ()
             (local-unset-key (kbd "<f5>"))
             (local-set-key (kbd "C-c r") 'racket-run-and-switch-to-repl)))
-  (add-hook 'racket-mode-hook #'rainbow-delimiters-mode)
   ;; (add-hook 'racket-mode-hook
   ;;           #'(lambda () (yas-activate-extra-mode 'emacs-lisp-mode)))
   )
