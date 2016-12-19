@@ -29,6 +29,7 @@
 (require 't-css)
 (require 't-lisp)
 (require 't-rkt)
+(require 't-clj)
 (require 't-org)
 
 (el-get 'sync)
