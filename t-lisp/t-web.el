@@ -1,6 +1,11 @@
 (el-get-bundle 'web-mode
   (require 'web-mode))
 
+;; format html/js/css
+;; need 'npm install -g js-beautify'
+(el-get-bundle 'yasuyk/web-beautify
+  (require 'web-beautify))
+
 (setq web-mode-enable-block-face t)
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
