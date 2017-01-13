@@ -62,7 +62,9 @@
    (interactive "P")
    ;;(message "force-reverting value is %s" force-reverting)
    (if (or force-reverting (not (buffer-modified-p)))
-       (revert-buffer :ignore-auto :noconfirm)
+       (progn
+         (revert-buffer :ignore-auto :noconfirm)
+         (message "revert file %s" (buffer-file-name)))
      (error "The buffer has been modified"))))
 
 (provide 't-edit)
