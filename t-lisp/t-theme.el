@@ -4,14 +4,11 @@
 ;; (require 'zenburn-theme)
 
 ;; tangotango
-(el-get-bundle color-theme-tangotango
-  (color-theme-tangotango))
+;; (el-get-bundle color-theme-tangotango
+;;   (color-theme-tangotango))
 
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/misc/")
-
-;; (el-get-bundle john2x/flatui-theme.el
-;;   (require 'flatui-theme))
-
+(add-to-list 'custom-theme-load-path "~/.emacs.d/misc/")
+(load-theme 'dracula t)
 ;; (el-get-bundle leuven-theme
 ;;   (load-theme 'leuven t))
 
