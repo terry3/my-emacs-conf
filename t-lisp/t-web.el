@@ -18,5 +18,7 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.wxml?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.njk?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ts?\\'" . web-mode))
 
 (provide 't-web)
