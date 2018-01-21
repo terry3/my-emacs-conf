@@ -32,6 +32,7 @@
 (require 't-clj)
 (require 't-org)
 (require 't-ts)
+(require 't-reasonml)
 
 (el-get 'sync)
 (provide 't-init)
