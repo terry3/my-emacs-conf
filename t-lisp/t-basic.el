@@ -85,4 +85,9 @@
 ;; To enable in all programming-related modes (Emacs 24+):
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+
+;; disable set-mark
+(global-unset-key (kbd "C-SPC"))
+(global-set-key (kbd "M-SPC") 'set-mark-command)
+
 (provide 't-basic)
