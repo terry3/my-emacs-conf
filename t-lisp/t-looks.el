@@ -29,6 +29,8 @@
 (global-set-key (kbd "M-9") 'highlight-symbol-next)
 
 ;; modeline
+(el-get-bundle 'all-the-icons
+  (all-the-icons-wicon   "tornado"))
 (el-get-bundle 'doom-modeline
   (progn
     (require 'doom-modeline)

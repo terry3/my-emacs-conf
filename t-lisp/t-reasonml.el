@@ -1,4 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/reasonml")
+(el-get-bundle 'merlin)
 
 ;;----------------------------------------------------------------------------
 ;; Reason setup
