@@ -28,12 +28,4 @@
 (global-set-key (kbd "M-8") 'highlight-symbol-prev)
 (global-set-key (kbd "M-9") 'highlight-symbol-next)
 
-;; modeline
-(el-get-bundle 'all-the-icons
-  (all-the-icons-wicon   "tornado"))
-(el-get-bundle 'doom-modeline
-  (progn
-    (require 'doom-modeline)
-    (doom-modeline-mode 1)))
-
 (provide 't-looks)

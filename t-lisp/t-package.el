@@ -4,6 +4,8 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/json-snatcher")
 (add-to-list 'load-path "~/.emacs.d/el-get/json-reformat")
 
+(setq-default dired-omit-files-p t) ; Buffer-local variable
+(setq dired-omit-files (concat dired-omit-files "\\|^\\..+$"))
 ;; add melpa to package-archives
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))

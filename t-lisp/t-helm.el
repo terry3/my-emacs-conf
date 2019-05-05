@@ -61,7 +61,6 @@
       ;; Added in my .gitconfig with "git config --global core.excludesfile ~/.gitignore_global"
       helm-ls-git-grep-command                   "git grep -n%cH --color=always --exclude-standard --no-index --full-name -e %p %f"
       helm-default-zgrep-command                 "zgrep --color=always -a -n%cH -e %p %f"
-      ;helm-pdfgrep-default-command               "pdfgrep --color always -niH %s %s"
       ;helm-reuse-last-window-split-state         t
       helm-split-window-default-side             'above
       ;helm-split-window-in-side-p                t
@@ -88,14 +87,15 @@
       helm-M-x-fuzzy-match                        t
       helm-lisp-fuzzy-completion                  t
       helm-recentf-fuzzy-match                    t
-      ;helm-locate-fuzzy-match                     t
+      helm-locate-fuzzy-match                     t
       helm-completion-in-region-fuzzy-match       t
       helm-move-to-line-cycle-in-source           t
       ido-use-virtual-buffers                     t             ; Needed in helm-buffers-list
       helm-tramp-verbose                          6
       helm-buffers-fuzzy-matching                 t
       helm-locate-command                         "locate %s -e -A --regex %s"
-      helm-org-headings-fontify                   t
+      helm-org-headings-fontify t
+      helm-find-noerrors t
       ;; helm-autoresize-max-height                  40 ; it is %.
       ;; helm-autoresize-min-height                  20 ; it is %.
       ;; helm-buffers-to-resize-on-pa                '("*helm apropos*" "*helm ack-grep*"
@@ -113,11 +113,10 @@
       helm-wikipedia-summary-url
       "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=")
 
+;; find-file-hook
+(add-hook 'find-file-hook 'helm-save-current-pos-to-mark-ring)
+
 ;; set helm-ls-git
 (el-get-bundle 'helm-ls-git)
-
-;; enable follow mode
-(defmethod helm-setup-user-source ((source helm-source-multi-occur))
-  (oset source :follow 1))
 
 (provide 't-helm)
