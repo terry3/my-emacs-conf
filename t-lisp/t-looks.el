@@ -25,15 +25,12 @@
 
 ;; hightlight symbol key bindings
 (global-set-key (kbd "M-0") 'highlight-symbol)
-(global-set-key (kbd "M-8") 'highlight-symbol-prev)
-(global-set-key (kbd "M-9") 'highlight-symbol-next)
+;; (global-set-key (kbd "M-8") 'highlight-symbol-prev)
+;; (global-set-key (kbd "M-9") 'highlight-symbol-next)
 
-;; modeline
-(el-get-bundle 'all-the-icons
-  (all-the-icons-wicon   "tornado"))
-(el-get-bundle 'doom-modeline
-  (progn
-    (require 'doom-modeline)
-    (doom-modeline-mode 1)))
+
+;; set frame title color
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 (provide 't-looks)
