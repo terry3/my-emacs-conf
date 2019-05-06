@@ -11,6 +11,12 @@
   :url "https://github.com/Fuco1/smartparens/blob/master/smartparens-config.el"
   (show-smartparens-global-mode t))
 
+(el-get-bundle! undo-tree
+  (progn
+    (global-undo-tree-mode)
+    (global-set-key (kbd "C-8") 'undo)
+    (global-set-key (kbd "C-9") 'undo-tree-redo)))
+
 ;; auto expand-region "auto-expand"
 (el-get-bundle 'expand-region)
 (global-set-key (kbd "C-0") 'er/expand-region)
