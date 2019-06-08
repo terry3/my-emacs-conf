@@ -57,6 +57,9 @@
 ;; remove useless key binding
 (global-unset-key (kbd "M-c"))
 
+;; enable upcase-region
+(put 'upcase-region 'disabled nil)
+
 ;; revert buffer no confirm
 (global-set-key
  (kbd "<f5>")

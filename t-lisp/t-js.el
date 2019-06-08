@@ -25,8 +25,21 @@
             (set (make-local-variable 'company-backends)
                  '((company-yasnippet company-dabbrev-code company-css)))))
 
+
+(defun terry3/beautify-hook ()
+  "automatically format before saving a file(js/jsx/css/html)"
+  (setq file-suffix (file-name-extension buffer-file-name))
+  (cond ((string= file-suffix "js") (web-beautify-js-buffer))
+        ((string= file-suffix "jsx") (web-beautify-js-buffer))
+        ((string= file-suffix "css") (web-beautify-css-buffer))
+        ((string= file-suffix "html") (web-beautify-html-buffer))))
+
 (add-hook 'web-mode-hook
           #'(lambda () (yas-activate-extra-mode 'js-mode)))
+
+(add-hook 'web-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'terry3/beautify-hook t t)))
 
 (provide 't-js)
 ;;; t-js.el ends here

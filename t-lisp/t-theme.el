@@ -1,14 +1,13 @@
 (el-get-bundle! 'doom-themes
   (progn
     ;; (load-theme 'doom-one t)
-    ;; (load-theme 'doom-vibrant t)
     ;; (load-theme 'doom-Iosvkem t)
     ;; (load-theme 'doom-challenger-deep t)
     ;; (load-theme 'doom-city-lights t)
-    ;; (load-theme 'doom-dracula t)
+    (load-theme 'doom-dracula t)
     ;; (load-theme 'doom-molokai t)
     ;; (load-theme 'doom-nord-light t)
-    (load-theme 'doom-nord t)
+    ;; (load-theme 'doom-nord t)
     ;; (load-theme 'doom-nova t)
     ;; (load-theme 'doom-one-light t)
     ;; (load-theme 'doom-one t)
