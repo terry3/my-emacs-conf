@@ -11,11 +11,55 @@
   :url "https://github.com/Fuco1/smartparens/blob/master/smartparens-config.el"
   (show-smartparens-global-mode t))
 
+;; undo tree
 (el-get-bundle! undo-tree
   (progn
-    (global-undo-tree-mode)
-    (global-set-key (kbd "C-8") 'undo)
-    (global-set-key (kbd "C-9") 'undo-tree-redo)))
+    (global-undo-tree-mode)))
+
+(defun marker-is-point-p (marker)
+  "test if marker is current point"
+  (and (eq (marker-buffer marker) (current-buffer))
+       (= (marker-position marker) (point))))
+
+(defun push-mark-maybe ()
+  "push mark onto `global-mark-ring' if mark head or tail is not current location"
+  (if (not global-mark-ring) (error "global-mark-ring empty")
+    (unless (or (marker-is-point-p (car global-mark-ring))
+                (marker-is-point-p (car (reverse global-mark-ring))))
+      (push-mark))))
+
+(defun backward-global-mark ()
+  "use `pop-global-mark', pushing current point if not on ring."
+  (interactive)
+  (push-mark-maybe)
+  (when (marker-is-point-p (car global-mark-ring))
+    (call-interactively 'pop-global-mark))
+  (call-interactively 'pop-global-mark))
+
+(defun forward-global-mark ()
+  "hack `pop-global-mark' to go in reverse, pushing current point if not on ring."
+  (interactive)
+  (push-mark-maybe)
+  (setq global-mark-ring (nreverse global-mark-ring))
+  (when (marker-is-point-p (car global-mark-ring))
+    (call-interactively 'pop-global-mark))
+  (call-interactively 'pop-global-mark)
+  (setq global-mark-ring (nreverse global-mark-ring)))
+
+(defun unpop-to-mark-command ()
+  "Unpop off mark ring. Does nothing if mark ring is empty."
+  (interactive)
+      (when mark-ring
+        (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
+        (set-marker (mark-marker) (car (last mark-ring)) (current-buffer))
+        (when (null (mark t)) (ding))
+        (setq mark-ring (nbutlast mark-ring))
+        (goto-char (marker-position (car (last mark-ring))))))
+
+(global-set-key (kbd "C-9") 'forward-global-mark)
+(global-set-key (kbd "C-8") 'backward-global-mark)
+(global-set-key (kbd "C-M-9") 'unpop-to-mark-command)
+(global-set-key (kbd "C-M-8") 'pop-to-mark-command)
 
 ;; auto expand-region "auto-expand"
 (el-get-bundle 'expand-region)

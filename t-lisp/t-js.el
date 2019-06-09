@@ -41,5 +41,7 @@
           (lambda ()
             (add-hook 'before-save-hook 'terry3/beautify-hook t t)))
 
+(add-hook 'web-mode-hook #'lsp)
+
 (provide 't-js)
 ;;; t-js.el ends here

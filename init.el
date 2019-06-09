@@ -34,7 +34,7 @@
 (require 't-rkt)
 (require 't-clj)
 (require 't-org)
-(require 't-ts)
+(require 't-lsp)
 
 (el-get 'sync)
 (provide 't-init)
