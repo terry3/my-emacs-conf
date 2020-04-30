@@ -37,11 +37,10 @@
 (add-hook 'web-mode-hook
           #'(lambda () (yas-activate-extra-mode 'js-mode)))
 
-(add-hook 'web-mode-hook
-          (lambda ()
-            (add-hook 'before-save-hook 'terry3/beautify-hook t t)))
 
-(add-hook 'web-mode-hook #'lsp)
+;; set jsx in js file
+(setq web-mode-content-types-alist
+  '(("jsx" . "\\.js[x]?\\'")))
 
 (provide 't-js)
 ;;; t-js.el ends here
