@@ -22,7 +22,7 @@
 (require 't-looks)
 (require 't-theme)
 (require 't-yasnippet)
-;; (require 't-flyc)
+(require 't-flyc)
 (require 't-lang-c)
 (require 't-md)
 (require 't-perl)
@@ -31,10 +31,22 @@
 (require 't-web)
 (require 't-css)
 (require 't-lisp)
-(require 't-rkt)
 (require 't-clj)
 (require 't-org)
-(require 't-lsp)
 
 (el-get 'sync)
 (provide 't-init)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(slime queue))
+ '(scroll-bar-mode nil)
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

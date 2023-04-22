@@ -5,6 +5,10 @@
 (el-get-bundle ag)
 (el-get-bundle helm-ag)
 
+
+(setq
+ helm-ag-use-agignore t)  ; add .agignore
+
 ;;; Enable Modes (This is loading nearly everything).
 ;;
 (helm-mode 1)

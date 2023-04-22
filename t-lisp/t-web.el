@@ -7,6 +7,25 @@
   (require 'web-beautify))
 
 (setq web-mode-enable-block-face t)
+;; not auto indent
+(setq web-mode-enable-auto-indentation nil)
+
+;; let smartparens handle these
+(setq web-mode-enable-auto-quoting nil
+      web-mode-enable-auto-pairing t)
+
+;; 1. Remove web-mode auto pairs whose end pair starts with a latter
+;;    (truncated autopairs like <?p and hp ?>). Smartparens handles these
+;;    better.
+;; 2. Strips out extra closing pairs to prevent redundant characters
+;;    inserted by smartparens.
+(dolist (alist web-mode-engines-auto-pairs)
+  (setcdr alist
+          (cl-loop for pair in (cdr alist)
+                   unless (string-match-p "^[a-z-]" (cdr pair))
+                   collect (cons (car pair)
+                                 (string-trim-right (cdr pair)
+                                                    "\\(?:>\\|]\\|}\\)+\\'")))))
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))

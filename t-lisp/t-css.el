@@ -11,5 +11,6 @@
 
 ;; add wx css file to css-mode
 (add-to-list 'auto-mode-alist '("\\.wxss\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 
 (provide 't-css)
