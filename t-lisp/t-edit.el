@@ -3,6 +3,44 @@
 ;; 推荐 lexical-binding（现代 Emacs 标准，更安全）
 ;;; -*- lexical-binding: t -*-
 
+;; 创建备份文件目录（如果不存在）
+(unless (file-exists-p "~/.emacs.d/backups")
+  (make-directory "~/.emacs.d/backups" t))
+
+(unless (file-exists-p "~/.emacs.d/autosaves")
+  (make-directory "~/.emacs.d/autosaves" t))
+
+;; 备份文件设置：所有备份放到 backups 目录
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+
+;; 备份方式优化
+(setq backup-by-copying t)        ; 用复制方式备份（保留原文件权限）
+(setq version-control t)          ; 启用版本控制（生成 filename~1~、~2~ 等）
+(setq kept-new-versions 6)        ; 保留最新 6 个版本
+(setq kept-old-versions 2)        ; 保留最早 2 个版本
+(setq delete-old-versions t)      ; 自动删除多余旧版本
+(setq vc-make-backup-files t)     ; 即使在版本控制下也备份
+
+;; auto-save 文件（#filename#）也集中到 autosaves 目录
+(setq auto-save-file-name-transforms
+      '((".*" "~/.emacs.d/autosaves/" t)))
+(setq auto-save-interval 300)     ; 每输入 300 个字符自动保存
+(setq auto-save-timeout 30)       ; 空闲 30 秒自动保存
+
+;; 优先使用 UTF-8
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+
+;; 额外保险（文件保存时强制 UTF-8）
+(setq-default buffer-file-coding-system 'utf-8)
+
+;; 设置语言环境
+(set-language-environment "UTF-8")
+
 ;; 在当前行下插入新行并定位
 (defun terry3/insert-next-line ()
   "Insert a new line below the current line and indent it."
@@ -47,11 +85,10 @@ Ignore auto-save and don't ask. Refuse if buffer modified unless FORCE-REVERTING
         (message "Reverted file %s" (buffer-file-name)))
     (error "Buffer has been modified")))
 
-
 ;; Avy 跳光标神器（绑定 C-, 为主要跳字符，超级丝滑）
 (use-package avy
   :ensure t
-  :bind (("C-," . avy-goto-char-timer))          ;; 你的首选：C-, 单字符跳（最快）
+  :bind (("C-," . avy-goto-char))          ;; 你的首选：C-, 单字符跳（最快）
   :config
   ;; 美化+优化
   (setq avy-background t)                 ;; 跳时灰底高亮

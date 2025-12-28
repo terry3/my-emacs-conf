@@ -8,6 +8,9 @@
 ;; 光标类型：bar（细竖线）
 (setq-default cursor-type 'bar)
 
+;; set font
+(set-frame-font "JetBrains Mono-13" nil t)
+
 ;; 高亮当前行
 (use-package hl-line
   :ensure t  ;; 内置，但保险
@@ -23,7 +26,6 @@
   (highlight-symbol-mode t)
   ;; 键绑定（原 M-0 高亮符号）
   (global-set-key (kbd "M-0") 'highlight-symbol))
-
 
 ;; 删除原 dired+ use-package，换成这个内置增强
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)  ;; 初始隐藏细节，按 ( 切换显示
