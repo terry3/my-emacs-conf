@@ -1,6 +1,6 @@
-;;; package --- basic configuration
-;;; Commentary: basic
-;; basic
+;;; t-basic.el --- 基础编辑设置（现代化版）
+
+;; 经典编辑偏好（从原文件迁移）
 (setq-default
  blink-cursor-delay 0
  blink-cursor-interval 0.4
@@ -13,30 +13,33 @@
  truncate-lines nil
  truncate-partial-width-windows nil)
 
-;; set visual active
-(transient-mark-mode t)
+;; 高亮选中区域（现代 Emacs 默认已开，可选保留）
+(transient-mark-mode 1)
 
-;; save desktop
-(desktop-save-mode 1)
+;; 保存桌面会话（恢复上次打开的缓冲区）
+(use-package desktop
+  :ensure t  ;; 内置，但 ensure 保险
+  :config
+  (desktop-save-mode 1)
+  (setq desktop-path '("~/.emacs.d/"))  ;; Windows 上安全路径
+  (setq desktop-save t)
+  (add-to-list 'desktop-modes-not-to-save 'dired-mode))  ;; 可选
 
-(defvar clean-buffer-list-timer nil
-  "Stores clean-buffer-list timer if there is one. You can disable clean-buffer-list by (cancel-timer clean-buffer-list-timer).")
+;; 自动清理旧缓冲区（用内置 midnight-mode 替代 clean-buffer-list）
+(use-package midnight
+  :defer 10
+  :config
+  (midnight-mode 1)
+  (setq clean-buffer-list-delay-general 7200)  ;; 调成 2 小时（原意），或改成 14400=4小时
+  (setq clean-buffer-list-kill-buffer-names
+        '("*scratch*" "*Messages*" "*Help*"))
+  (setq clean-buffer-list-kill-never-buffer-names
+        '("*scratch*" "*Messages*")))
 
-;; run clean-buffer-list every 2 hours
-(setq clean-buffer-list-timer (run-at-time t 14400 'clean-buffer-list))
-
-;; kill everything, clean-buffer-list is very intelligent at not killing
-;; unsaved buffer.
-;; (setq clean-buffer-list-kill-regexps '("^.*$"))
-
-;; keep these buffer untouched
-;; prevent append multiple times
-
-;; prevent append multiple times
-;; append to *-init instead of itself
-
-;; To enable in all programming-related modes (Emacs 24+):
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+;; 彩虹括号（编程模式下超实用）
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (provide 't-basic)
 ;;; t-basic.el ends here

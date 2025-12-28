@@ -1,35 +1,34 @@
-(el-get-bundle 'dired+)
-;; display dired details always
-(setq diredp-hide-details-initially-flag nil)
+;;; t-looks.el --- 外观基础设置（现代化版）
 
-;; delete tool bar
-(menu-bar-showhide-tool-bar-menu-customize-disable)
-;; delete scroll bar
-(menu-bar-no-scroll-bar)
+;; 隐藏菜单栏、工具栏、滚动条（Windows/Mac/Linux 通杀）
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
-;; set cursor type to bar
+;; 光标类型：bar（细竖线）
 (setq-default cursor-type 'bar)
-;; set cursor type to box
-;;(setq-default cursor-type 'box)
 
-(el-get-bundle 'highlight)
+;; 高亮当前行
+(use-package hl-line
+  :ensure t  ;; 内置，但保险
+  :config
+  (global-hl-line-mode 1)
+  (set-face-background 'hl-line "gray13"))  ;; 深灰背景
 
-;; turn on highlighting current line
-(global-hl-line-mode 1)
-(set-face-background hl-line-face "gray13")
+;; 符号高亮（自动高亮光标下符号，超实用）
+(use-package highlight-symbol
+  :ensure t
+  :config
+  (setq highlight-symbol-idle-delay 0.5)  ;; 延迟 0.5s 高亮
+  (highlight-symbol-mode t)
+  ;; 键绑定（原 M-0 高亮符号）
+  (global-set-key (kbd "M-0") 'highlight-symbol))
 
-;; hightlight symbol
-(el-get-bundle 'highlight-symbol)
-(setq highlight-symbol-idle-delay 0.5)
-(highlight-symbol-mode t)
 
-;; hightlight symbol key bindings
-(global-set-key (kbd "M-0") 'highlight-symbol)
-;; (global-set-key (kbd "M-8") 'highlight-symbol-prev)
-;; (global-set-key (kbd "M-9") 'highlight-symbol-next)
-
-;; set frame title color
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
+;; 删除原 dired+ use-package，换成这个内置增强
+(add-hook 'dired-mode-hook 'dired-hide-details-mode)  ;; 初始隐藏细节，按 ( 切换显示
+(setq dired-hide-details-hide-symlinks t
+      dired-hide-details-hide-information-lines t)
 
 (provide 't-looks)
+;;; t-looks.el ends here
