@@ -8,7 +8,7 @@
  column-number-mode t
  compilation-scroll-output t
  indent-tabs-mode nil
- line-spacing 0.2
+ line-spacing 0
  show-trailing-whitespace t
  truncate-lines nil
  truncate-partial-width-windows nil)

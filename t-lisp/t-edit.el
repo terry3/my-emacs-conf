@@ -38,6 +38,11 @@
 ;; 额外保险（文件保存时强制 UTF-8）
 (setq-default buffer-file-coding-system 'utf-8)
 
+;; set windows clipborad code
+(when (eq system-type 'windows-nt)
+  (set-clipboard-coding-system 'utf-16le-dos)
+  (setq selection-coding-system 'utf-16le-dos))
+
 ;; 设置语言环境
 (set-language-environment "UTF-8")
 
@@ -88,9 +93,13 @@ Ignore auto-save and don't ask. Refuse if buffer modified unless FORCE-REVERTING
 ;; Avy 跳光标神器（绑定 C-, 为主要跳字符，超级丝滑）
 (use-package avy
   :ensure t
-  :bind (("C-," . avy-goto-char))          ;; 你的首选：C-, 单字符跳（最快）
+  :bind (("C-," . avy-goto-word-1))
   :config
   ;; 美化+优化
+  ;; 2. 使用类似 ace-jump 的单字符提示风格（最接近原版 ace-jump-mode）
+  (setq avy-style 'at)          ; 只在目标字符前显示一个提示键
+  ;; 或者
+  ;; (setq avy-style 'pre)         ; 提示键在目标前，视觉更清晰
   (setq avy-background t)                 ;; 跳时灰底高亮
   (setq avy-style 'at-full)               ;; 全屏提示
   (setq avy-all-windows t)                ;; 所有窗口跳
@@ -140,7 +149,7 @@ Ignore auto-save and don't ask. Refuse if buffer modified unless FORCE-REVERTING
 (global-set-key (kbd "C-j") 'cua-set-mark)
 
 ;; 可选优化（经典配置，避免冲突 + 更好体验）
-(setq cua-keep-region-after-copy t)     ;; 复制后保持选区高亮
+(setq cua-keep-region-after-copy nil)     ;; kill region after copy
 (setq cua-prefix-override-inhibit-delay 0.2)  ;; 更快响应
 (cua-selection-mode t)  ;; 只用选区部分（如果不想全 cua 复制粘贴，可注释 cua-mode 1）
 

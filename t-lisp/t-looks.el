@@ -9,7 +9,10 @@
 (setq-default cursor-type 'bar)
 
 ;; set font
-(set-frame-font "JetBrains Mono-13" nil t)
+(set-face-attribute 'default nil :font "Sarasa Mono SC SemiBold-15")  ; 英文/拉丁部分 height
+
+;; fallback 确保万无一失（虽然 Sarasa SC 已经内置好）
+(set-fontset-font t 'han "Sarasa Mono SC SemiBold-15")
 
 ;; 高亮当前行
 (use-package hl-line
